@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	<script src="../js/linxing.js"></script>
+</head>
+<body>
+	<input type="text" id="num1">
+	<select name="" id="opt">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" id="num2">
+	<button id="btn">计算</button>
+	<input type="text" id="result">
+</body>
+<script>
+	var num1Inp = document.getElementById("num1");
+	var num2Inp = document.getElementById("num2");
+	var optSelect = document.getElementById("opt")
+	var btn = document.getElementById("btn");
+	var resultInp = document.getElementById("result");
+
+	btn.onclick = function(){
+		var num1 = num1Inp.value*1;
+		var num2 = num2Inp.value*1;
+		var opt = optSelect.value;
+
+
+		// 一定需要写上输入值才可
+		var result = szys(num1,opt,num2);
+		resultInp.value = result;
+
+}
+</script>
+</html>

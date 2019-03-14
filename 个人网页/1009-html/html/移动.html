@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动</title>
+	<style>
+		body{
+			height: 1000px;
+		}
+		#scrollby{
+			position:fixed;
+			right: 30px;
+			bottom: 30px;
+		}
+		#scrollto{
+			position:fixed;
+			right: 150px;
+			bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<button id="moveby">moveby</button>
+	<button id="moveto">moveto</button>
+	<button id="resizeby">resizeby</button>
+	<button id="resizeto">resizeto</button>
+	<button id="scrollby">scrollby</button>
+	<button id="scrollto">scrollto</button>
+</body>
+<script>
+	var movebyBtn = document.getElementById("moveby");
+	var movetoBtn = document.getElementById("moveto");
+	var resizebyBtn = document.getElementById("resizeby");
+	var resizetoBtn = document.getElementById("resizeto");
+	var scrollbyBtn = document.getElementById("scrollby");
+	var scrolltoBtn = document.getElementById("scrollto");
+	var timer=null;
+
+	movebyBtn.onclick=function(){
+		var left=20;
+		if(left<=500){
+			timer=setInterval(function(){
+				moveBy(10,10);
+			},100)
+			left+=10;
+		}else{
+			clearInterval(timer);
+		}
+	}
+
+	movetoBtn.onclick=function(){
+		moveTo(200,300);
+	}
+
+	resizebyBtn.onclick=function(){
+		var width=20;
+		if(width<=1000){
+			timer=setInterval(function(){
+				resizeBy(10,10);
+				width+=10;
+			},100)
+		}else{
+			clearInterval(timer);
+		}
+	}
+	resizetoBtn.onclick=function(){
+		resizeTo(200,300);
+	}
+	scrollbyBtn.onclick=function(){
+		scrollBy(100,10);
+	}
+	scrolltoBtn.onclick=function(){
+		scrollTo(100,700);
+	}
+
+	
+</script>
+</html>

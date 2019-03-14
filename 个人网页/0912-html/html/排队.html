@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排队出现效果</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+		html,body{height: 100%;}
+		html{
+			font-size: -webkit-calc(100vw/10.8);
+			font-size: calc(100vw/10.8);
+		}
+		body{font-size: .36rem;background-color: #eee;
+			
+
+		}
+		/*大盒子上面要写相对定位，给后面需要出现的小盒子（a1-a4）提供参考，且overflow:hidden;可以隐藏掉这些小盒子（a1-a4）*/
+		.box{width: 5rem;position:relative;margin: .4rem;height: 5rem;overflow:hidden;}
+		/*对小盒子相同部分进行统一设置，*/
+		.a{height: 1rem;width: 50%;position:absolute;}
+		/*给每一个小盒子设置逐帧动画，并且后面的盒子需要设置等待时间（第二个时间），另外，还需要设置盒子的原始位置，并且需要写上动画的形式（forwards表示小盒子在动画结束时停留；infinite表示循环动画；inifite alternate表示小盒子在动画结束后原路返回*/
+		.a1{animation:go1 1s forwards;background-color: #ff0;top: 0rem;left: 100%;}
+		/*等待时间1s*/
+		.a2{animation:go1 1s 1s forwards;background-color: #f00;top: 1rem;left: 100%;}
+		/*等待时间2s,循环动画*/
+		.a3{animation:go1 1s 2s infinite ;background-color: #f0f;top: 2rem;left: 100%;}
+		/*动画原路返回，循环出现*/
+		.a4{animation:go1 1s infinite alternate;background-color: #0ff;top: 3rem;left: 100%;}
+
+		@keyframes go1{
+			from{
+				left: 100%;
+			}
+			to{
+				left: 0;
+			}
+		}
+		
+	
+
+
+	</style>
+</head>
+<body>
+<!-- 最终停留效果 -->
+	<div class="box">
+		<div class="a a1"></div>
+		<div class="a a2"></div>
+		<div class="a a3"></div>
+		<div class="a a4"></div>
+	</div>
+
+
+</body>
+</html>

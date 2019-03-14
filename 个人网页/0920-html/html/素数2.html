@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>素数2</title>
+</head>
+<body>
+	
+</body>
+<script>
+	for(i=2;i<=100;i++){
+
+		var num = i;
+		for(j=2;j<num;j++){
+
+			while(num%j==0){
+				document.write(i+"是一个合数<br/>");
+				break;
+			}
+			
+			if(j=num-1){
+				document.write(i+"是一个素数<br/>");
+			}
+		}
+	}
+	
+</script>
+</html>

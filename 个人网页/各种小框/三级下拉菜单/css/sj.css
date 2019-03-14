@@ -1,0 +1,24 @@
+@charset "utf-8";
+*{padding: 0;margin: 0;}
+li{list-style:none;}
+body{font-family: "微软雅黑";font-size:12px;color:#7d667d;}
+img{vertical-align:top;}
+a{text-decoration: none;color:blue;}
+
+
+/*一级菜单*/
+.a{width: 480px;height: 60px;background-color: #f0f;margin:auto;}
+.a li{float: left;width: 60px;height: 60px;line-height: 60px;text-align: center;position:relative;background-color: yellow;}
+/*二级下拉框整行宽高设置*/
+.a li .a1{width: 120px;height: 300px;text-align: center;line-height: 24px;position:absolute;top: 60px;left: 0;display: none;}
+/*二级下拉框中第一行宽高设置*/
+.a li .a1 .ej{width: 120px;height: 30px;line-height: 24px;text-align: center;color:blue;background-color: orange;}
+/*三级下拉框整行宽高设置*/
+.a li .a1 .ej .a3{width: 150px;height: 400px;background-color: green;position:absolute;top: 0;left: 120px;display:none;}
+/*三级下拉框中每一行行高及内容格式设置*/
+.a .a1 .ej .a3  p{height: 30px;line-height: 24px;}
+/*hover操作*/
+.a li:hover{background-color: orange;}
+.a li:hover .a1{display:inline-block;}
+.a li .a1 .ej:hover .a3{display:inline-block;}
+

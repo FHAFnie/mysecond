@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性盒子</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		li{list-style: none;}
+		body{text-align: center;}
+		img{vertical-align: top;}
+		.jlt{display: inline-block;background-image:url(../images/logolist.png);}
+		header{display:-webkit-flex;
+				-webkit-flex-direction:row;
+				flex-direction:row;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+				-webkit-align-items:center;
+				align-items:center;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				margin:0 2%;
+				background-color: #ff0;
+				width:100%;margin:auto;
+}
+		header .header1{background-color: #f0f;line-height: 40px;width: 30%;}
+		header .h2{background-color: #0ff;width: 50%;}
+		.pay{display:-webkit-flex;
+				-webkit-flex-direction:row;
+				flex-direction:row;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+				-webkit-align-items:center;
+				align-items:center;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				width: 100%;
+				margin:10px auto;
+			}
+		.pay li{width: 25%;line-height: 200px;background-color: #0f0;}
+		.allication_list{/*-webkit-box-sizing:border-box;*/
+				display:-webkit-flex;
+				-webkit-flex-direction:row;
+				flex-direction:row;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+				-webkit-align-items:center;
+				align-items:center;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				width: 100%;
+				background-color: #fff;
+
+		}
+		.allication_list li{-webkit-box-sizing:border-box;
+							box-sizing:border-box;
+							display:-webkit-flex;
+							-webkit-flex-direction:column;
+							flex-direction:row;
+							-webkit-justify-content:space-between;
+							justify-content:space-between;
+							-webkit-align-items:center;
+							align-items:center;
+							-webkit-flex-wrap:wrap;
+							flex-wrap:wrap;
+							border:1px solid #e6e6e6;border-left:0;
+							
+							width: 25%;line-height: 181px;padding-top: 20px;
+							text-align: center;
+							
+							
+
+		}
+		.allication_list li .jlt{
+								background-position: 0 0;
+								width: 50px;height: 50px;
+								margin-top: 20px;
+								text-align: center;
+								margin:25px auto;
+	
+
+		}
+		.allication_list li .more{
+									background-position: 0 -82px;
+									margin:61px auto 51px;
+
+		}
+		.allication_list li p{line-height: 25px;/*text-align: center;*/width: 100%;margin-bottom: 37px;}
+		.allication_list .more{}
+		.footer{display:-webkit-flex;
+				-webkit-flex-direction:row;
+				flex-direction:row;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+				-webkit-align-items:center;
+				align-items:center;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				width: 100%;
+				margin:auto;
+
+		}
+		.footer li{width: 25%;line-height: 100px;background-color: #f0f;}
+
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header1">账单</div>
+		<div class="header1 h2">扫描二维码</div>
+	</header>
+	<ul class="pay">
+			<li>圣诞节</li>
+			<li>多久开</li>
+			<li>打开的健康</li>
+			<li>打开较大空间</li>
+	</ul>
+	<ul class="allication_list">
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt"></i>
+			<p>但是考试</p>
+		</li>
+		<li>
+			<i class="jlt more"></i>
+		</li>
+		<li>
+			<i class="jlt more"></i>
+		</li>
+		<li>
+			<i class="jlt more"></i>
+		</li>
+	</ul>
+	<ul class="footer">
+		<li>到底是谁的</li>
+		<li>但是撒点</li>
+		<li>淡淡的</li>
+		<li>是打双打</li>
+	</ul>
+</body>
+</html>

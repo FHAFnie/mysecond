@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小广告</title>
+	<style>
+		.boxOn{
+			width: 400px;
+			height: 500px;
+			background-color: #ff0;
+			position:absolute;
+			right: 30px;
+			bottom: 10px;
+			display: block;
+		}
+		.boxOff{
+			display: none;
+		}
+		.header{
+			width: 400px;
+			height: 40px;
+			line-height: 40px;
+			background-color: #00f;
+			
+		}
+		.left{
+			float: left;
+			width: 300px;
+			height: 40px;
+			text-indent: 10px;
+		}
+		.right{
+			float: right;
+			width: 40px;
+			height: 40px;
+			margin-right: 30px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="boxOn" id="box">
+		<div class="header" id="header">
+			<span class="left" id="left"></span>
+			<span class="right" id="right">X</span>
+		</div>
+	</div>
+</body>
+<script>
+	var leftInp=document.getElementById("left");
+	var rightInp = document.getElementById("right");
+	var box = document.getElementById("box");
+
+	var timer=null;
+	var seconds=3;
+	leftInp.innerHTML = "距离广告结束还有"+seconds+"秒";
+	timer = setInterval(endTime,1000);
+
+	function endTime(){
+		seconds--;
+		leftInp.innerHTML = "距离广告结束还有"+seconds+"秒";
+		if(seconds==0){
+			clearInterval(timer);
+			seconds=3;
+			box.className="boxOff";
+			setTimeout(function(){
+				box.className="boxOn";
+				leftInp.innerHTML = "距离广告结束还有"+seconds+"秒";
+				timer=setInterval(endTime,1000);
+			},3000)
+		}
+	}
+
+	rightInp.onclick=function(){
+			clearInterval(timer);
+			seconds=3;
+			box.className="boxOff";
+			setTimeout(function(){
+				box.className="boxOn";
+				leftInp.innerHTML = "距离广告结束还有"+seconds+"秒";
+				timer=setInterval(endTime,1000);
+			},3000)
+	}
+</script>
+</html>

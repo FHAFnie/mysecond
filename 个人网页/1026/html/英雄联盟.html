@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄搜索</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        #box{
+            width: 300px;
+            /*height: 500px;*/
+            position:relative;
+            margin:20px auto;
+        }
+        #heroList{
+            width: 300px;
+            /*height: 50px;*/
+            /*background-color: #FF0000;*/
+            position:absolute;
+            left: 0;
+            top: 30px;
+        }
+        .heroInfo{
+            float: left;
+            width: 60px;
+            height: 60px;
+            position:relative;
+            overflow: hidden;
+            margin-bottom: 2px;
+            margin-right: 2px;
+
+        }
+        .heroInfo img{
+            width: 60px;
+            height: 60px;
+        }
+        .shadow{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255,255,255,.3);
+            z-index: 999;
+            position:absolute;
+            left: 0;
+            top: 60px;
+            display: none;
+        }
+        .shadow p{
+            text-align: center;
+            line-height: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" id="user"><button id="btn">查询</button>
+    <ul id="heroList">
+    </ul>
+</div>
+</body>
+<script>
+    var box=document.getElementById("box");
+    var userInp=document.getElementById("user");
+    var btn=document.getElementById("btn");
+    var heroUl=document.getElementById("heroList");
+    var speed=5;
+    var req=new XMLHttpRequest();
+    req.open("get","../mockData/dataList.js",true);
+    req.send();
+    req.onreadystatechange=function(){
+        if(req.readyState==4&&req.status==200){
+            var result=req.responseText;
+            var heroAll=JSON.parse(result);
+
+//            console.log(heroAll);
+//            var html="";
+            for(var i=0;i<heroAll.length;i++){
+                var heroAllInfo=heroAll[i];
+                var imgSrc=heroAllInfo["src"];
+                var hreoName=heroAllInfo["name"];
+                var heroLocation=heroAllInfo["loaction"];
+                var heroHurt=heroAllInfo["hurt"];
+
+                var li=document.createElement("li");
+                li.className="heroInfo";
+                heroUl.appendChild(li);
+
+
+                var img=document.createElement("img");
+                img.src="../images/"+imgSrc;
+                li.appendChild(img);
+
+                var div=document.createElement("div");
+                div.className="shadow";
+                li.appendChild(div);
+
+                var p=document.createElement("P");
+                p.className="name";
+                div.appendChild(p);
+                p.innerHTML=hreoName;
+
+                var p=document.createElement("P");
+                p.className="job";
+                div.appendChild(p);
+                p.innerHTML=heroLocation;
+
+                var p=document.createElement("P");
+                p.className="class";
+                div.appendChild(p);
+                p.innerHTML=heroHurt;
+            }
+
+            var liList=document.getElementsByClassName("heroInfo");
+            for(let i=0;i<liList.length;i++) {
+                let itemLi = liList[i];
+                itemLi.onmouseover = function () {
+                    var shadowDiv = itemLi.getElementsByClassName("shadow")[0];
+                    clearInterval(itemLi.timer);
+                    clearInterval(itemLi.timer1);
+//                    var shadowTop=parseInt(getStyleAttr(shadowDiv,"top"));
+                    itemLi.timer=setInterval(function(){
+                        shadowDiv.style.display = "block";
+                        shadowDiv.style.top = parseInt(getStyleAttr(shadowDiv, "top")) - speed + "px";
+                        if (parseInt(getStyleAttr(shadowDiv, "top")) <= 0) {
+                            shadowDiv.style.top = 0;
+                            clearInterval(itemLi.timer);
+                        }
+                    },20)
+                }
+                itemLi.onmouseout = function () {
+                    clearInterval(itemLi.timer);
+                    clearInterval(itemLi.timer1);
+                    var shadowDiv = itemLi.getElementsByClassName("shadow")[0];
+                    itemLi.timer1=setInterval(function(){
+                        shadowDiv.style.top = parseInt(getStyleAttr(shadowDiv, "top")) +speed + "px";
+                        if (parseInt(getStyleAttr(shadowDiv, "top")) >= 60) {
+                            shadowDiv.style.top = 60;
+                            shadowDiv.style.display="none";
+                            clearInterval(itemLi.timer1);
+                        }
+                    },20)
+                }
+            }
+        }
+    }
+
+    userInp.oninput=user.onblur=user.onchange=function(){
+        var key=userInp.value;
+        var reqAgain=new XMLHttpRequest();
+        reqAgain.open("get","../mockData/dataList.js",true);
+        reqAgain.send();
+        reqAgain.onreadystatechange=function(){
+            if(reqAgain.readyState==4&&reqAgain.status==200){
+                var liList=document.getElementsByClassName("heroInfo");
+                for(var i=0;i<liList.length;i++){
+                    liList[i].style.display="none";
+                }
+
+                var result=reqAgain.responseText;
+                var allInfo=JSON.parse(result);
+//                console.log(allInfo);
+                for(var i=0;i<allInfo.length;i++){
+                    var heroItem=allInfo[i];
+
+                    for(var j in heroItem){
+                        var strInfo=heroItem[j];
+
+                        if(strInfo.indexOf(key)!=-1){
+                            liList[i].style.display="block";
+                        }
+
+                    }
+                }
+
+
+
+            }
+        }
+
+    }
+
+
+
+
+    function getStyleAttr(obj,attr){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(obj)[attr];
+        }else{
+            return obj.currentStyle[attr];
+        }
+    }
+
+</script>
+</html>

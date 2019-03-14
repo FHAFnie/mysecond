@@ -1,0 +1,39 @@
+@charset "utf-8";
+*{padding: 0;margin: 0;}
+li{list-style: none;}
+img{vertical-align: top;}
+body{font-family: "微软雅黑","宋体";/*font-style: 12px/24px;*/color:#fbfaf5;}
+a{text-decoration: none;}
+
+.top{width: 1126px;height: 36px;background-color: #ecf0f1;margin:auto;color:#78797b;font-size:12px;line-height: 36px;}
+.top p{width: 244px;text-indent: 24px;float: left;}
+.top p:hover{color:yellow;text-decoration: underline;}
+.top .topr{width: 150px;height: 36px;float: right;}
+.top li{width: 67px;height: 36px;float: left;background: url(../images/8.jpg) right 13px no-repeat;text-indent: 8px;}
+.top .li2{background: none}
+.top a{color:#797a7c;}
+.top .topr:hover{background: orange;}
+.top .topr :hover a{color:yellow;text-decoration: underline;}
+
+.logo{width: 1126px;height: 110px;margin:auto;}
+.logo h1{float: left;width: 356px;height: 90px;margin-left: 24px;margin-top: 20px;}
+.pnb{width: 504px;height: 90px;float: right;margin-top: 20px;}
+.pnb li{width: 50px;height: 90px;float: left;background: #ffffff;margin-left: 55px;}
+.pnb li img{float: left;}
+
+.pnb .li3{width: 239px;height: 90px;}
+.pnb .li3 div{width: 181px;height: 90px;float: left;margin-left: 8px;}
+.li3 div p{color:#e04c4c;font-size: 18px}
+.li3 div .xx{line-height: 29px;font-size:12px;color:#777777;margin-top: 7px;}
+
+.dh{width: 1126px;height: 50px;background-color: #2a80b9;margin:auto;}
+
+.gg{width: 1126px;height: 400px;background-image: url(../images/13.jpg);margin:auto;background-color: red;}
+.gdl{width: 1126px;height: 110px;background-color: #ffffff;margin:auto;overflow:hidden;}
+.gdl .rl{width: 1078px;height: 50px;line-height: 50px;border:1px solid #d6d6d6;margin:30px 22px 30px 24px;background: url(../images/14.jpg) 19px center no-repeat;}
+.gdl .rl p{text-indent: 46px;width: 109px;line-height: 50px;font-size:12px;color:#f04637;float: left;}
+.gdl ul{width: 969px;height: 50px;font-size:12px;color:#636773;line-height: 50px;float: left;text-indent: 30px;}
+.gdl ul marquee{width: 208px;height: 50px;}
+.gdl ul li{width: 208px;height: 50px;float: left;background: url(../images/15.jpg) 15px center no-repeat;}
+.gdl ul a{color:#576069;}
+.gdl ul li:hover a{color:yellow;text-decoration: underline;}

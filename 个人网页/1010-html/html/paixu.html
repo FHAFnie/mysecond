@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>8</li>
+		<li>5</li>
+		<li>2</li>
+		<li>10</li>
+		<li>7</li>
+	</ul>
+	<ul>
+		
+	</ul>
+</body>
+<script>
+	var ulList = document.getElementsByTagName("ul");
+	var ul=ulList[0];
+	var liList = ul.getElementsByTagName("li");
+	// console.log(liList);
+	// var item1=liList[0].innerHTML;
+	// console.log(item1);
+	
+	// for(var i=0;i<liList.length;i++){
+	// 	var item1=liList[i];
+	// 	console.log(item1);
+	// 	var item2=liList[i+1].innerHTML;
+	// 	console.log(item1,item2);
+	// }
+	var list = [];
+	for(var k=0;k<liList.length;k++){
+		list.push(liList[k]);
+	}
+	console.log(list);
+
+	// list.sort(function(a,b){
+	// 	return a.innerHTML>b.innerHTML;
+	// });
+
+	// for(var j=0;j<list.length;j++){
+	// 	for(var i=0;i<list.length-1-j;i++){
+	// 		var temp= list[i];
+	// 		if(list[i].innerHTML>list[i+1].innerHTML){
+	// 			list[i]=list[i+1];
+	// 			list[i+1]=temp;
+	// 		}
+	// 	}
+
+	// }
+	console.log(list);
+	// for(var i=0;i<=list.length;i++){
+	// 	ul.appendChild(list[i]);
+	// }
+
+
+</script>
+</html>

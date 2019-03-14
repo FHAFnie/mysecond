@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>swith书写四则运算</title>
+
+</head>
+<body>
+	<input type="text" id="num1">
+	<select name="" id="opt">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" id="num2">
+	<button id="btn">计算</button>
+	<input type="text" id="result">
+</body>
+<script>
+	var num1Inp = document.getElementById("num1");
+	var num2Inp = document.getElementById("num2");
+	var optSelect = document.getElementById("opt")
+	var btn = document.getElementById("btn");
+	var resultInp = document.getElementById("result");
+
+	btn.onclick = function(){
+		var num1 = num1Inp.value*1;
+		var num2 = num2Inp.value*1;
+		var opt = optSelect.value;
+		var result =0;
+	 	switch (opt){
+	 		case "+":
+	 			result = num1 + num2;
+	 			break;
+	 		case "-":
+	 			result = num1-num2;
+	 			break;
+	 		case "*":
+	 			result = num1 * num2;
+	 			break;
+	 		case "/":
+	 			result = num1 / num2;
+	 			break;
+	 	}
+	 	resultInp.value = result;
+	 	
+	}
+
+ 	
+
+
+
+</script>
+</html>

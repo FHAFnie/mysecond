@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本域的书写</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		/*此处设置input和textarea无外边框*/
+		input:focus,teatarea:focus{outline:none;}
+		/*设置textarea的宽高，定义它不能被修改（即随意拉动其大小）*/
+		textarea{resize:none;width: 100px;height: 50px;background-color: #ff0;margin:100px;}
+		
+	</style>
+</head>
+<body>
+	<textarea name="" id="a" >请输入文字 </textarea>
+	<br>
+	<textarea name="" id="b" placeholder="请输入文字"></textarea>
+</body>
+</html>

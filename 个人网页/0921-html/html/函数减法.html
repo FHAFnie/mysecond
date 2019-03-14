@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数减法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function jianfa(num1,num2){
+		var result = num1-num2;
+		return result;
+	}
+	function cf(num1,num2){
+		var result = num1*num2;
+		return result;
+	}
+	function chu(num1,num2){
+		var result = num1/num2;
+		return result;
+	}
+	function add(num1,num2){
+		var result = num1+num2;
+		return result;
+	}
+	function szys(num1,num2,opt){
+		switch(opt){
+			case "+": var result =add(num1,num2);
+			break;
+			case "-": var result =jianfa(num1,num2);
+			break;
+			case "*": var result =cf(num1,num2);
+			break;
+			case "/": var result =chu(num1,num2);
+			break;
+		}
+		return result;
+	}
+	var result1 = szys(1,2,"+");
+	alert(result1);
+
+	var result2 = szys(1,2,"*");
+	alert(result2);
+
+	var result3 = szys(1,2,"/");
+	alert(result3);
+
+	var result4 = szys(1,2,"-");
+	alert(result4);
+
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断是否是素数</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	for(var i=2;i<=100;i++){
+
+		var flag = true;
+		var num = i;
+
+		for(var j = 2;j<num;j++){
+			if(num%j==0){
+				flag = false;
+				break;
+			}
+		}
+		if(flag){
+			document.write(num+"是一个素数<br/>")
+		}else{
+			document.write(num+"是一个合数<br/>")
+		}
+	}
+	
+</script>
+</html>

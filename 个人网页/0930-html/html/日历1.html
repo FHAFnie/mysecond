@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<script src="../js/date.js"></script>
+	<script src="../js/yanglizhuanyinli.js"></script>
+	<style>
+		body,h1,h2,h3,h4,h5,h6,p{
+			padding: 0;
+			margin: 0;
+		}
+		ul,dl,li,dd{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		li:hover{
+			background-color: red;
+			color:#fff;
+		}
+		#date{
+			width: 210px;
+			margin:100px auto;
+		}
+		#header{
+			width: 210px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: #000;
+			color:#fff;
+		}
+		#header span{
+			float: left;
+			height: 30px;
+			line-height: 30px;
+		}
+		#up{
+			width: 20%;
+		}
+		#mid{
+			width: 60%;
+		}
+		#under{
+			width: 20%;
+		}
+		#th{
+			width: 210px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: #000;
+			color:#fff;
+		}
+		#th li{
+			float: left;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+
+		}
+		#days{
+			width: 210px;
+			height: 180px;
+			background-color: #000;
+			color:#fff;
+			text-align: center;
+		}
+		#days li{
+			float: left;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+
+		}
+		#chDate{
+			width: 210px;
+			height: 60px;
+			background-color: #000;
+			color:#fff;
+			text-align: center;
+		}
+		#chDate p{
+			height: 30px;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="date">
+		<div id="chDate">
+			<p id="chDate1"></p>
+			<p id="chDate2"></p>
+		</div>
+		<div id="header">
+			<span id="under"><</span>
+			<span id="mid">2018-09-29</span>
+			<span id="up">></span>
+		</div>
+		<ul id="th">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<ul id="days"></ul>
+	</div>
+</body>
+<script>
+	
+	var under = document.getElementById("under");
+	var mid = document.getElementById("mid");
+	var up = document.getElementById("up");
+
+	var days = document.getElementById("days");
+
+	var under = document.getElementById("under");
+	var up = document.getElementById("up");
+
+	var chDate1 = document.getElementById("chDate1");
+	var chDate2 = document.getElementById("chDate2");
+
+	var date = new Date();//获取当前的时间，此时，修改date，并不会修改整个系统的时间
+	// alert(date);
+
+	// var date = new Date();
+	// var year = date.getFullYear();
+	// var month = date.getMonth();
+
+	// mid.innerHTML = `${year}年${month+1}月`;//设置标题日期（获取时间）
+
+	// 1.首先当月第一天周几
+	changeDate();
+	chDateShow();
+	//表头的日期还有农历日期
+	
+
+	//表头计时器
+	setInterval(chDateShow,1000);//计时器
+	function chDateShow(){
+		var date =new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth();
+		var day = date.getDate();
+		var hours= date.getHours();
+		hours=hours>=10?hours:"0"+hours;
+		var minutes = date.getMinutes();
+		minutes=minutes>=10?minutes:"0"+minutes;
+		var seconds = date.getSeconds();
+		seconds=seconds>=10?seconds:"0"+seconds;
+		chDate1.innerHTML = year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds;
+		setInterval(chDateShow,1000);
+	}
+	//表头农历表示
+	shouNongli();
+
+
+
+
+	//上翻月
+	up.onclick=function (){
+		date.setDate(1);
+		// alert(date);
+		date.setMonth(date.getMonth()+1);
+		changeDate();
+		// alert(date);
+	}
+	// alert(date);
+	//下翻月
+	under.onclick=function (){
+		date.setDate(1);
+		// alert(date);
+		date.setMonth(date.getMonth()-1);
+		changeDate();
+		// alert(date);
+	}
+
+	function changeDate(){//创建日历中间部分
+		var year = date.getFullYear();
+		var month = date.getMonth();
+
+		mid.innerHTML = `${year}年${month+1}月`;//设置标题日期（获取时间）
+
+		
+		var thisMonthDays = getMonthDays(date);
+		var prevMonthDays = gerLastMonthDays(date);
+		// alert(prevMonthDays);
+		var thisMonthWeek = getMonthWeek(date);
+		// alert(thisMonthWeek);
+		var thisMonthWeek = thisMonthWeek==0?7:thisMonthWeek;
+		// alert(thisMonthWeek);
+		var html="";
+		for(var i=prevMonthDays-thisMonthWeek+2;i<=prevMonthDays;i++){//获取当个月日期
+			// alert(i);
+			html+="<li>"+i+"</li>";
+		}
+		for(var i=1;i<=thisMonthDays;i++){//获取当月的日期表
+			html+="<li>"+i+"</li>";
+		}
+		for(var i=1;i<=(42-thisMonthDays-thisMonthWeek+1);i++){
+			html+="<li>"+i+"</li>";
+		}
+		days.innerHTML= html;
+	}
+
+function shouNongli(){
+	var lunarDate = getLunarDate(date);
+    var lunarDateString = getLunarDateString(lunarDate);
+    console.log(lunarDate);
+    console.log(lunarDateString);
+    chDate2.innerHTML = 
+}
+
+
+
+
+
+
+
+</script>
+</html>

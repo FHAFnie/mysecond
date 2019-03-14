@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">    
+	<!-- charset为定义字符编码属性 -->
+	<title>Document
+		<!-- 网页的标题标签 -->
+	</title>
+	<style type="text/css">
+		*{padding:0;margin: 0;}
+		/*此处表示清除模块的内外边距*/
+		li{list-style:none;}
+		/*此处表示列表无属性*/
+		/*以上两行在外部引入样式中无需写进style标签中*/
+		/*
+			外部引入样式时必须书写一下代码
+			<link type="text/css" rel="stylesheet" href="目标路径及目标名称">
+		 */
+		
+	</style>
+</head>
+<body>
+	<p>
+		定义选择符时，可以重复使用
+		<div class="a">sadksdakjsdah</div>
+		多个选择符的属性相同时，可以一起定义
+		<div class="a b c d">adsdshdsj</div>
+
+		<!-- 列表标签：为大标签，如果要清楚列表的属性，需要用到代码 li{list-style:none;} -->
+			<ul>无序标签
+				<li>此处为列</li>
+			</ul>
+			<ol>有序标签
+				<li></li>
+			</ol>
+		文本属性标签及值：
+			1 font-size:20px;不可能小于12px；0px时，不会显示文本
+			2 color:red;
+			3 line-height:24px;表示文字在24px的行高中居中对齐
+			4 text-indent：30px；首航缩进
+			5 text-align:center/left/right；
+		文字(文字过多，放不下时会用到)隐藏标签及属性：overflow:hidden
+	</p>
+
+</body>
+</html>

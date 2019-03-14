@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>秒表效果，点击计数</title>
+</head>
+<body>
+	<button id="btn" class="btnOn">开始计数</button><span id="countSpan" value="0"></span>
+</body>
+<script>
+	var btn=document.getElementById("btn");
+	var countSpanInp=document.getElementById("countSpan");
+	var count = 0;
+	var timer = null;
+	btn.onclick=function(){
+		// countSpanInp.innerHTML="第"+count+"秒";
+		if(btn.className=="btnOn"){
+			countSpanInp.innerHTML="第"+count+"秒";
+			btn.innerHTML = "暂停";
+			btn.className = "btnOff";
+			timer = setInterval(function(){
+				count++;
+				countSpanInp.innerHTML="第"+count+"秒";
+			},1000);
+		}else if(btn.className=="btnOff"){
+			countSpanInp.innerHTML="第"+count+"秒";
+			btn.innerHTML = "开始计数";
+			btn.className = "btnOn";
+			countSpanInp.innerHTML="第"+count+"秒";
+			clearInterval(timer);
+		}
+		// if(btn.className = "btnOff"){
+		// 	countSpanInp.innerHTML="第"+count+"秒";
+
+		// 	timer = setInterval(function(){
+		// 		count++;
+		// 		countSpanInp.innerHTML="第"+count+"秒";
+		// 	},1000);
+
+		// }else if(btn.className=="btnOn"){
+		// 	// countSpanInp.innerHTML="第"+count+"秒";
+		// 	clearInterval(timer);
+		// }
+		// countSpanInp.innerHTML="第"+count+"秒";
+	}
+
+</script>
+</html>

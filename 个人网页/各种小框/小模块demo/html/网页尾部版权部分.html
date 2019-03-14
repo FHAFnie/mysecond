@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页部分版权书写</title>
+	<style type="text/css">
+		.cl:after{content:"";display: block;clear:both;height:0;overflow: hidden;visibility: hidden;}
+		a{color:#fff;text-decoration: none;}
+		footer{width: 1500px;background-color: #000;}
+		/*第一种方法，边线没有严格居中*/
+		.footer_l{float: left;line-height: 80px;}
+		.footer_l a{padding:0 8px 0;border-right:1px solid #eee;margin-right: 6px;font-size: 12px;/*display: inline-block;*/}
+		此处严格的竖线居中，要用到浮动，在父元素上+cl清楚浮动，然后上下居中用margin-top来说实现（有具体高度的可以这样做）。
+		.footer_z{float: left;}
+		.footer_z a{float: left;padding:0 8px;border-right: 1px solid #eee;margin-top: 31px;color:red;}
+		.footer_z a:nth-child(4){border:0;}
+		/*第三种方法，使用弹性盒子实现,需要设置父元素高度才行*/
+
+		.footer_r{width: 500px;height: 80px;
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-jutify-content:space-between;jutify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+		}
+		.footer_r a{padding:0 8px;border-right: 1px solid #eee;/*margin-top: 31px;*/color:red;}
+		.footer_r a:nth-child(4){border:0;}
+
+	</style>
+</head>
+<body>
+	<footer class="cl">
+		<div class="footer_l">
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+		</div>
+		<!-- 浮动实现 -->
+		<div class="footer_z cl">
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+		</div>
+		<!-- 第三种方法，弹性盒子 -->
+		<div class="footer_r">
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+			<a href="">网站地图</a>
+		</div>
+	</footer>
+</body>
+</html>

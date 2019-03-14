@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>1</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+
+
+		html,body{height: 100%;}
+		html{
+			font-size: -webkit-calc(100vw/7.5);
+			font-size: calc(100vw/7.5);
+		}
+		body{font-size: .24rem;/*background-color: #f7f7f7;*/
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:column;flex-direction:column;
+		}
+		header{height: 1.05rem;background-color: #fff;}
+		section{flex:1;/*background-color: #ff0;*/overflow-y:scroll; }
+		
+		header{height: 1.05rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+
+
+		}
+		header i{width: .23rem;height: .27rem;background:url(../images/1.png) no-repeat 0 0;-webkit-background-sizing:100%;background-size:100%;margin-left: .35rem;}
+		header .a1{width: .45rem;height: .34rem;background:url(../images/2.png) no-repeat 0 0;-webkit-background-sizing:100%;background-size:100%;margin-left: .35rem;margin: 0 .25rem 0 .37rem;}
+		header p{margin: 0	.3rem 0 .085rem;}
+		.ssk{flex:1;height: .56rem;background-color: #eee;
+			border-radius: .1rem;overflow:hidden;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+		}
+		.ssk .ssk_pic1{width: .28rem;height: .28rem;background:url(../images/3.png) no-repeat 0 0;font-size: 0;-webkit-background-sizing:100%;background-size:100%;border:0;margin-left: 1.27rem;}
+		.ssk .ssk_sr1{flex:1;
+			border:0;
+			font-size: .26rem;
+			line-height: .56rem;
+			background-color: #eee;
+			margin-left: .2rem;}
+
+		.sec2 .ggy{background: url(../images/4.png) no-repeat 0 0;height: 2.8rem;-webkit-background-sizing:100%;background-size:100%;}
+		.sec2 .fl{margin: .18rem .3rem .21rem .4rem;
+			border-bottom: 1px solid #e1e1e1;
+			/*background-color: #fff;*/
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+			-webkit-flex-wrap:wrap;flex-wrap:wrap;
+		}
+		.sec2 .fl li{width: 20%;margin-top: .2rem;
+					display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:column;flex-direction:column;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+			-webkit-overflow-wrap:wrap;overflow-wrap:wrap;
+					
+
+		}
+		.sec2 .fl li i{width: .85rem;height: .64rem;background: url(../images/6.png) no-repeat 0 0; -webkit-background-sizing:100%;background-size:100%;}
+		.sec2 .fl li p{line-height: .54rem;}
+		.sec2 .dd{
+				background-color: #fff;
+				
+				display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:column;flex-direction:column;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			
+			
+		}
+		.sec2 .dd>div{height: .96rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+			
+
+		}
+		.sec2 .dd h3{line-height: .33rem;color:#161616;padding-left: .27rem;border-left: 1px solid red;font-size: .32rem;}
+		.sec2 .dd p{color:#a0a0a0;font-size: .24rem;margin-right: .32rem;}
+		.sec2 .dd .pic2{padding:0 .32rem;margin-bottom: .08rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.sec2 .dd .pic2 li{display: -webkit-flex;display: -flex;
+							border-radius: .1rem;/*overflow: hidden;*/
+		}
+		.sec2 .dd .pic2 i{width: 2.24rem;height: 2.01rem;background: url(../images/7.png) no-repeat 0 0; -webkit-background-sizing:100%;background-size:100%;}
+
+		.sec2 .dd .wenzi{margin: 0 .31rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.sec2 .dd .wenzi li{width: 1.65rem;
+					background-color: #f2f6dd;
+					display: -webkit-flex;display: -flex;
+					-webkit-justify-content:center;justify-content:center;
+					border-radius: .1rem;/*overflow: hidden;*/
+		}
+		.sec2 .dd .wenzi a{line-height: .64rem;/*padding:0 .56rem;*/border-radius: .2rem;}
+		
+		.footer{height: .98rem;
+			border-top: 1px solid #eee;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.footer .footer_tb{width: 20%;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:column;flex-direction:column;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.footer .footer_tb i{width: .38rem;height: .38rem;margin-top: .2rem;
+			background: url(../images/8.png) no-repeat 0 0; -webkit-background-sizing:100%;background-size:100%;
+
+
+
+		}
+		.footer .footer_tb p{line-height: .4rem;}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<i></i>
+		<p>北京</p>
+		<div class="ssk">
+			<input type="submit" class="ssk_pic1">
+			<input type="text" placeholder="想找的搜出来~" class="ssk_sr1">
+		</div>
+		<i class="a1"></i>
+	</header>
+
+
+	<section class="sec2">
+		<section class="ggy"></section>
+		<ul class="fl">
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+			<li>
+				<i></i>
+				<p>找家店</p>
+			</li>
+		</ul>
+
+		<section class="dd">
+			<div>
+				<h3>全球旅拍</h3>
+				<p>更多目的地></p>
+			</div>
+
+			<ul class="pic2">
+				<li>
+					<i></i>
+				</li>
+				<li>
+					<i></i>
+				</li>
+				<li>
+					<i></i>
+				</li>
+			</ul>
+			<ul class="wenzi">
+				<li><a href="">三亚</a></li>
+				<li><a href="">三大亚</a></li>
+				<li><a href="">三亚</a></li>
+				<li><a href="">三亚</a></li>
+			</ul>
+			<div>
+				<h3>备婚工具</h3>
+				<p>更多></p>
+			</div>
+		</section>
+	</section>
+	<ul class="footer">
+		<li class="footer_tb">
+			<i></i>
+			<p>首页</p>
+		</li>
+		<li class="footer_tb">
+			<i></i>
+			<p>首页</p>
+		</li>
+		<li class="footer_tb">
+			<i></i>
+			<p>首页</p>
+		</li>
+		<li class="footer_tb">
+			<i></i>
+			<p>首页</p>
+		</li>
+		<li class="footer_tb">
+			<i></i>
+			<p>首页</p>
+		</li>
+	</ul>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03</title>
+</head>
+<body>
+<!-- 	<input type="text" id="username1"> -->
+	<span id="userMessage"></span>
+	<a href="javascript:window.history.back()">后退</a>
+	<a href="javascript:window.history.go(-1)">后退一页</a>
+	<a href="https:www.360.com">前进</a>
+	<a href="javascript:window.location.reload()">刷新</a>
+</body>
+<script>
+	// var username1Inp = document.getElementById("username1");
+	var userMsessageInp = document.getElementById("userMessage");
+	var href = window.location.href;//file:///D:/1807/1009-html/html/03.html?usernamesdsdaf&userage15
+	// alert(href);
+	// var str1=window.location.search;
+	// console.log(str1);//?username=asdf&userage=45
+	var str1=window.location.search.substring(1);
+	console.log(str1);//username=asdf&userage=45
+	// if(href.indexOf("username")!=-1){//括号里面必须带引号，不然就是个变量
+	// 	var str = href.split("?");
+	// 	// console.log(str);
+
+	// 	var str1=str[1].split("&");
+	// 	// console.log(str1);
+	// 	var username=str1[0].split("=")[1];
+	// 	console.log(username);
+	// 	var userage=str1[1].split("=")[1];
+	// 	console.log(userage);
+	// 	if(username!=""&&userage!=""){
+	// 		if(userage>=18){
+	// 			// username1Inp.value = username+"已成年";
+	// 			userMsessageInp.innerHTML = username+"欢迎你，今年"+userage+"岁,已成年";
+	// 		}else{
+	// 			// username1Inp.value = username+"未成年";
+	// 			userMsessageInp.innerHTML = username+"欢迎你，今年"+userage+"岁,未成年";
+	// 		}
+	// 	}else{
+	// 		window.location.href="02.html";
+	// 	}
+	// }else{
+	// 	window.location.href="02.html";
+	// }
+</script>
+</html>

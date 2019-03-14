@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="username" placeholder="用户名">
+
+	<input type="text" id="userage" placeholder="用户年龄">
+	<a href="javascript:window.history.forward()">前进</a>
+	<a href="javascript:window.history.go(1)">前进一页</a>
+	<a href="javascript:window.history.go(2)">前进两页</a>
+	<a href="javascript:window.location.reload()">刷新</a>
+	<!-- 只有在history里面有了后面的页面，才能实现前进操作即，先要执行一次跳转，有了后续的页面之后，才能再进行前进操作 -->
+	<button id="btn">跳转</button>
+</body>
+<script>
+	var usernameInp = document.getElementById("username");
+	var userageInp = document.getElementById("userage");
+	var btn = document.getElementById("btn");
+	btn.onclick=function(){
+		var username=usernameInp.value;
+		var userage=userageInp.value;
+		// window.location.href="03.html";
+		window.location.href="03.html?username="+username+"&userage="+userage;
+	}
+
+
+</script>
+</html>

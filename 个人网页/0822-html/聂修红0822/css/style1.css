@@ -1,0 +1,13 @@
+.a{width:1000px;height:100px;background-color:red;color:#39f214;}
+.b{width:1000px;height:60px;background-color:yellow;color:#efdbdb;}
+.c{width:1000px;height:463px;background-color:green;color:black;}
+.d{width:1000px;height:68px;background-color:blue;color:yellow;}
+.e{width:1000px;height:240px;background-color:white;color:#e5e5e5;}
+.f{width:1000px;height:250px;background-color:#e5e5e5;color:#262222;}
+.f1{width:1000px;height:81px;background-color:#aabbc3;color:#9b7b32;}
+.f2{width:1000px;height:68px;background-color:#aaf321;color:#9b7b32;}
+/*
+	1 在css文件中书写选择符样式时，可以直接这样写
+	2 在html文件中直接引入时，需要加<style>在这里面具体定义样式参数</style>
+	3 body div 这些定义的时候，前面不用加“.”（点号）；而其他的如a1这一类，则需要加“.”（点号）
+ */

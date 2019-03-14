@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    for (var i = 100; i <= 999; i++) {
+        var num = i; // 123
+        var bai = parseInt(num / 100);
+        var shi = parseInt(num % 100 / 10);
+        var ge = parseInt(num % 10);
+
+        if (num == Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3)) {
+            document.write(num+"是一个水仙花数<br/>");
+        }
+
+    }
+
+
+</script>
+</html>

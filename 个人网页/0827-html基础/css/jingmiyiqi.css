@@ -1,0 +1,18 @@
+@charset "utf-8"
+*{padding: 0;margin: 0;}
+li{list-style:none;}
+
+.a{width: 1126px;height: 36px;background-color: #ecf0f1;font-size:12px;color:#9c9c9e;line-height:36px;}
+.a p{width: 290px;text-indent:25px;float: left;}
+.a .a1{width: 169px;float: right;text-align:center;background:url(../images/1.jpg) no-repeat 84px 13px;}
+.a a{text-decoration:none;color:#767678;}
+
+.b{width: 1126px;height: 110px;background:url(../images/2.jpg) 25px center no-repeat;color:#2a80b9;overflow:hidden;}
+.b div{width: 420px;height:91px;font:32px/49px "宋体";text-indent:125px;margin-top: 20px;float: left;}
+.b .b1{font:12px/24px "Times NewRoman";text-indent:125px;}
+.b ul{width: 504px;height:110px;float: right;}
+.b li{width: 49px;height: 80px;padding-top: 30px;padding-left:56px;float: left;}
+.b .b2{width: 238px;}
+.b .b2 a{float: left;}
+.b .b2 p{width: 188px;line-height:29px;font-size:15px;text-indent:9px;float: left;}
+.b .b2 .b2-1{font-size:18px;line-height:18px;color:#e74e3e;}

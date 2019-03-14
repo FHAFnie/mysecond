@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch计算年月日天数</title>
+</head>
+<body>
+	<input type="text" id="year">年
+	<input type="text" id="month">月
+	<input type="text" id="day">日
+	<button id="btn">计算</button>
+	<input type="text" id="result">
+
+
+
+
+</body>
+<script>
+	var btn = document.getElementById("btn");
+
+	btn.onclick = function(){
+		var yearInp = document.getElementById("year");
+		var year = yearInp.value;
+
+		var resultInp = document.getElementById("result")
+		resultInp.value = "";
+
+
+		switch(true){
+			case year>=1500&&year<=3000&&year%1==0:
+				// alert("年分合法");
+				//开始进行月份的判断
+				var monthInp = document.getElementById("month");
+				var month = monthInp.value*1;//保险起见，最好做一个乘法，将其转化成数字类型；
+
+			// 先判断月份是否合法
+				switch(true){
+					case month>=1&&month<=12&&month%1==0:
+						// alert("月份合法");
+						// 月份合法后，再在里面进行天数的判断
+
+
+
+						var feb = 28;
+						var maxDay = 31;
+						switch(true){
+							case year%400==0||(year%4==0&&year%100!=0):
+										feb = 29;
+										break;
+						}
+				
+
+						switch(true){
+							case month==4||month==6||month==9||month==11:
+								maxDay = 30;
+								break;
+							case month==2:
+								maxDay = feb;
+								break;
+						}
+						// 上面一部分都是为了给不同的月份，给定不同的最大天数限定
+						// 都能得到一个maxDay，后面的判断，都是根据这个maxDay来作为界限判断的
+
+						var dayInp = document.getElementById("day");
+						var day = dayInp.value*1;
+						// 取值并赋值给day
+						// alert(day)验证取值是否成功
+						// 
+					// 开始判断天数是否合法，并计算
+						switch(true){
+							case day>=1&&day<=maxDay&&day%1==0:
+							// alert("日期合法")
+							// 天数合法后，直接进行计算
+							// 定义con，将天数赋给con；
+							// 每个月都不同，都需要列举
+								var con = 0;
+								switch(month){
+									case 1:
+										con = day;
+										break;
+									case 2:
+										con = 31 + day;
+										break;
+									case 3:
+										con = 31+feb+day;
+										break;
+									case 4:
+										con = feb+31+31+day;
+										break;
+									case 5:
+										con = feb+31+31+30+day;
+										break;
+									case 6:
+										con = feb+31+31+30+31+day;
+										break;
+									case 7:
+										con = feb+31+31+30+31+30+day;
+										break;
+									case 8:
+										con = feb+31+31+30+31+30+31+day;
+										break;
+									case 9:
+										con = feb+31+31+30+31+30+31+31+day;
+										break;
+									case 10:
+										con = feb+31+31+30+31+30+31+31+30+day;
+										break;
+									case 11:
+										con = feb+31+31+30+31+30+31+31+30+31+day;
+										break;
+									case 12:
+										con = feb+31+31+30+31+30+31+31+30+31+30+day;
+										break;
+								}
+								// con得到后，将其赋值给文本框，注意是判断完成后，在外面，再复制
+								resultInp.value = con;
+								break;
+
+							default:
+								alert("日期不合法");
+								break;
+						}
+
+						break;
+
+					default:
+						alert("月份不合法");
+						break;
+				}	
+
+				break;
+			default:
+				alert("年份不合法");
+				break;
+		}
+
+	}
+
+</script>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>移动端3</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+
+
+		html,body{height: 100%;}
+		html{
+			font-size: -webkit-calc(100vw/7.5);
+			font-size: calc(100vw/7.5);
+		}
+		body{font-size: .24rem;/*background-color: #f2f3f7;*/
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:column;flex-direction:column;
+		}
+		header{height: .8rem;background-color: #fff;}
+		section{flex:1;background-color: #f2f3f7;overflow-y:scroll; }
+
+		.y2_header{
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+		}
+
+		.ssk{/*flex:1;*/height: .56rem;
+			width: 5.4rem;
+			margin-left: .27rem;
+			background-color: #eee;
+			border-radius: .1rem;overflow:hidden;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+		}
+		.ssk .ssk_pic1{width: .28rem;height: .28rem;background:url(../images/3.png) no-repeat 0 0;font-size: 0;-webkit-background-sizing:100%;background-size:100%;border:0;margin-left: .17rem;}
+		.ssk .ssk_sr1{flex:1;
+			border:0;
+			font-size: .26rem;
+			line-height: .56rem;
+			background-color: #eee;
+			margin-left: .2rem;}
+		.y2_header i{width: .38rem;
+			height: .38rem;
+			background:url(../images/17.png) no-repeat 0 0;
+			-webkit-background-sizing:100%;background-size:100%;
+			margin-left: .35rem;}
+
+		.y3_ggy{width: 100%;
+			height: 3.76rem;
+
+		}
+		.y3_ggy img{width: 7.5rem;height: 3.76rem;}
+	
+		.y3_list1{margin-bottom: .18rem;
+			background-color: #fff;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-around;justify-content:space-around;
+			-webkit-align-items:center;align-items:center;
+		}
+		.y3_list1 li{
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+			
+		}
+		.y3_list1 li i{width: .32rem;height: .32rem;
+			margin-right: .07rem;
+			background: url(../images/20.png) no-repeat 0 0;font-size: 0;
+			-webkit-background-sizing:100%;background-size:100%;
+
+		}
+		.y3_list1 li p{line-height: .82rem;
+			color:#727272;
+			font-size: .24rem;
+
+		}
+		
+
+		.y3_sec2 .fl{padding-top: .22rem;
+			margin-bottom: .2rem;
+			background-color: #fff;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-flex-wrap:wrap;flex-wrap:wrap;
+			-webkit-align-items:center;align-items:center;
+		}
+		.y3_sec2 .fl li{width: 25%;
+						margin-bottom: .12rem;
+						text-align: center;
+			
+		}
+		.y3_sec2 .fl li img{width: 1.14rem;height: 1.14rem;}
+		.y3_sec2 .fl li h3{line-height: .5rem;color:#a7a7a7;text-align: center;font-size: .26rem;}
+	
+		.ggy2{width: 7.5rem;/*height: 1.9rem;*/margin-bottom: .2rem;}
+		.ggy2 img{width: 7.5rem;height: 1.9rem;}
+
+
+
+
+
+	.y3_footer{height: .98rem;
+			border-top: 1px solid #eee;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.y3_footer .footer_tb{width: 20%;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:column;flex-direction:column;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.y3_footer .footer_tb i{
+			width: .38rem;height: .38rem;margin-top: .2rem;
+			background: url(../images/8.png) no-repeat 0 0; -webkit-background-sizing:100%;background-size:100%;
+		}
+		.y3_footer .footer_tb p{line-height: .4rem;}
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<!-- 头部 -->
+	<header class="y2_header">
+		<div class="ssk">
+			<input type="submit" class="ssk_pic1">
+			<input type="text" placeholder="想找的搜出来~" class="ssk_sr1">
+		</div>
+		<i class="a1"></i>
+		<i class="a1"></i>
+	</header>
+	<!-- 广告页 -->
+	
+
+	<section class="y3_sec2">
+			<div class="y3_ggy">
+				<img src="../images/19.png" alt="">
+			</div>
+
+			<ul class="y3_list1">
+				<li>
+					<i></i>
+					<p>精选婚礼好物</p>
+				</li>
+				<li>
+					<i></i>
+					<p>精选婚礼好物</p>
+				</li>
+				<li>
+					<i></i>
+					<p>精选婚礼好物</p>
+				</li>
+			</ul>
+		
+			<ul class="fl">
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="../images/21.png" alt="">
+							<h3>拍婚纱照</h3>
+						</a>
+					</li>	
+			</ul>
+			<div class="y3_ggy ggy2">
+				<img src="../images/22.png" alt="">
+			</div>
+	</section>
+
+
+<!-- 尾部 -->
+	<ul class="y3_footer">
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+		</ul>
+</body>
+</body>
+</html>

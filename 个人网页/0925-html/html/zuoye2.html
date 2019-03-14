@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机生成10个数并放入到一个数组中求其中的最小数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var list=[];
+	for(i=1;i<=10;i++){
+		
+		var con = Math.round(Math.random()*100);
+		list[list.length]=con;
+	}
+
+	document.write(list+"<br/>");
+	
+
+	var min = list[0];
+	for(i=1;i<list.length;i++){
+		var item = list[i];
+		if(item<min){
+			min = item;
+		}
+	}
+	document.write(min);
+
+</script>
+</html>

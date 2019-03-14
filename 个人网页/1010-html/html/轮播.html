@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<ul>
+		
+	</ul>
+</body>
+<script>
+	var ulList = document.getElementsByTagName("ul");
+	var ul1 = ulList[0];
+	
+	setInterval(function(){
+		var liList=ul1.getElementsByTagName("li");
+		var firstLi=liList[0];
+		ul1.appendChild(firstLi);
+	},1000)
+
+</script>
+</html>

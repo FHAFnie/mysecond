@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		tr:nth-child(2n){background-color: orange;}
+		td:nth-child(2n+1){color:red;}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+document.write("<table border='1'>")
+	var i=1;
+	
+	do{
+		// document.write(i);
+		var j = 1;
+		document.write("<tr>");
+		
+		do{
+			document.write("<td>");
+			document.write(j+"*"+i+"="+(j*i)+" ");
+			document.write("</td>");
+			j++;
+		}while(j<=i)
+
+
+		document.write("</tr>");
+
+		i++;
+
+	}while(i<=9)
+
+	document.write("</table>");
+</script>
+</html>

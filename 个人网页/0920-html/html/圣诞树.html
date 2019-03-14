@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圣诞树</title>
+</head>
+<body>
+	
+</body>
+<script>
+// 第一队，显示圣诞树的伞
+	var i = 1;
+	while(i<=9){
+		// 此处将做出的空间用空格空出来
+		var j=1;
+		while(j<=10-i){
+			document.write("　");
+			j++;
+		}
+		// 右边的部分用“锋”字占起来
+		var k =1 ;
+		while(k<=2*i-1){
+			document.write("锋");
+			k++;
+		}
+		document.write("<br/>");
+		i++;
+	}
+	// 第二队，做树干
+	var h = 1;
+	while(h<=9){
+	// 左边先用空格空起来
+		var h1=1;
+		while(h1<=10-h){
+			document.write("　");
+			h1++;
+		}
+
+		// 右边先用“锋”占起来
+		var h2 = 1;
+		while(h2<=2*h-1){
+			if(h2==h){
+				// 在正中间位置，用“锋”表示树干
+				document.write("锋");
+			}else{
+				// 不在中间的位置，直接用空格占据（不显示出来）
+				document.write("　");
+			}
+			h2++;
+		}
+		document.write("<br/>")
+		h++;
+	}
+</script>
+</html>

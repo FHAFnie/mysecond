@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>Document</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+
+
+		html,body{height: 100%;}
+		html{
+			font-size: -webkit-calc(100vw/7.5);
+			font-size: calc(100vw/7.5);
+		}
+		body{font-size: .24rem;/*background-color: #f2f3f7;*/
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:column;flex-direction:column;
+		}
+		header{height: .88rem;background-color: #fff;}
+		section{flex:1;background-color: #f2f3f7;overflow-y:scroll; }
+		
+		.y2_header{padding:0 .3rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+		}
+		.y2_header .y2_ss{width: .35rem;height: .35rem;
+			background: url(../images/9.png) no-repeat 0 0; 
+			-webkit-background-sizing:100%;background-size:100%;
+			font-size: 0;border:0;
+
+
+		}
+		.y2_header .y2_nav{width: 3.66rem;margin-left: 1.27rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-around;justify-content:space-around;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		
+		.y2_header .y2_nav li a{display: block;
+			width: .74rem;
+			border-bottom: 1px solid red;
+			line-height: .87rem;
+			text-align: center;
+
+		}
+		.y2_header i{margin-left: .21rem;}
+		.y2_header i:nth-child(3){width: .45rem;height: .35rem;
+			background: url(../images/10.png) no-repeat 0 0; 
+			-webkit-background-sizing:100%;background-size:100%;
+		}
+		.y2_header i:nth-child(4){width: .66rem;height: .41rem;
+			background: url(../images/11.png) no-repeat 0 0; 
+			-webkit-background-sizing:100%;background-size:100%;
+		}
+
+		
+		.y2_sec2 .y2_ggy{margin: .08rem	.31rem .08rem;
+				display: -webkit-flex;display: -flex;
+				-webkit-flex-direction:row;flex-direction:row;
+				/*-webkit-justify-content:space-between;justify-content:space-between;*/
+				-webkit-align-items:center;align-items:center;
+		}
+		.y2_ggy .y2_ggy_l{width: 4.58rem;
+						/*height: 3.84rem;*/
+						border-radius: .1rem;
+						/*overflow: hidden;*/
+						margin-right: .08rem;
+
+		}
+		.y2_ggy .y2_ggy_l img{width: 4.58rem;height: 3.84rem;
+
+		}
+		.y2_ggy .y2_ggy_r{width: 2.2rem;
+						border-radius: .1rem;
+						/*overflow: hidden;*/
+						background-color: red;
+
+
+		}
+		.y2_ggy .y2_ggy_r img:nth-child(1){margin-bottom: .08rem;}
+		.y2_ggy .y2_ggy_r img{width: 2.2rem;
+						/*height: 1.88rem;*/
+		}
+
+
+
+
+
+		.dd{height: .96rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+			
+
+		}
+		 .dd h3{line-height: .33rem;
+		 	color:#161616;
+		 	padding-left: .27rem;
+		 	border-left: 1px solid red;
+		 	font-size: .32rem;
+			 background-color: #fff;}
+
+		 .dd p{color:#a0a0a0;font-size: .24rem;margin-right: .32rem;}
+
+		.y2_sec2 .fl{margin-bottom: .2rem;
+			background-color: #fff;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-flex-wrap:wrap;flex-wrap:wrap;
+			-webkit-align-items:center;align-items:center;
+		}
+		.y2_sec2 .fl li{width: 25%;margin-bottom: .38rem;
+						text-align: center;
+			
+		}
+		.y2_sec2 .fl li img{width: 1.29rem;height: .85rem;}
+		.y2_sec2 .fl li h3{line-height: 54px;color:#363636;text-align: center;font-size: .26rem;}
+		.y2_sec2 .fl li p{line-height: 21px;font-size: .21rem;color:#fb496b;font-weight: bolder;}
+
+
+		.y2_sec3_tz{background-color: #fff;
+
+		}
+		.y2_sec3_tz .sec3_tz1{padding:0 .32rem;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.y2_sec3_tz .sec3_tz1 i{margin-right: .1rem;
+			width: .4rem;
+			height: .42rem;
+			background:url(../images/17.png) no-repeat 0 0; 
+			-webkit-background-sizing:100%;background-size:100%;;
+		}
+		.y2_sec3_tz .sec3_tz1 span{line-height: .69rem;font-size: .32rem;}
+
+
+
+		.y2_footer{height: .98rem;
+			border-top: 1px solid #eee;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.y2_footer .footer_tb{width: 20%;
+			display: -webkit-flex;display: -flex;
+			-webkit-flex-direction:column;flex-direction:column;
+			/*-webkit-justify-content:space-between;justify-content:space-between;*/
+			-webkit-align-items:center;align-items:center;
+
+		}
+		.y2_footer .footer_tb i{
+			width: .38rem;height: .38rem;margin-top: .2rem;
+			background: url(../images/8.png) no-repeat 0 0; -webkit-background-sizing:100%;background-size:100%;
+		}
+		.y2_footer .footer_tb p{line-height: .4rem;}
+
+		</style>
+</head>
+<body>
+	<header class="y2_header">
+		<input type="submit" class="y2_ss">
+		<ul class="y2_nav">
+			<li><a href="">社区</a></li>
+			<li><a href="">社区</a></li>
+			<li><a href="">社区</a></li>
+		</ul>
+		<i></i>
+		<i></i>
+	</header>
+<!-- 第二部分 -->
+	<section class="y2_sec2">
+	<!-- 广告页 -->
+		<div class="y2_ggy">
+			<div class="y2_ggy_l">
+				<img src="../images/12.png" alt="">
+			</div>
+			<div class="y2_ggy_r">
+				<img src="../images/14.png" alt="">
+				<img src="../images/14.png" alt="">
+			</div>
+		</div>
+		
+			<div class="dd">
+				<h3>进帖子看看</h3>
+				<p>更多></p>
+			</div>
+			
+			<ul class="fl">
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+				<li>
+					<img src="../images/16.png" alt="">
+					<h3>拍婚纱照</h3>
+					<p>+53</p>
+				</li>
+			</ul>
+
+		<section class="y2_sec3_tz">
+			<div class="dd">
+				<h3>每日热帖</h3>
+			</div>
+			
+			<div class="sec3_tz1">
+				<i></i>
+				<span>Ksksksk</span>
+			</div>
+			<div class="sec3_tz1">
+				<i></i>
+				<span>多看多看书看书的</span>
+			</div>
+		</section>
+	</section>
+	<!-- weibu -->
+	<ul class="y2_footer">
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+			<li class="footer_tb">
+				<i></i>
+				<p>首页</p>
+			</li>
+		</ul>
+</body>
+</html>

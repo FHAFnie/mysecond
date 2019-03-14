@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str="aaabbbcccdddeeeaaabdssskjjskldafkkabb";
+	// var count=1;
+	// var newStr="";
+	// for(var i=0;i<str.length;i++){
+	// 	var char = str.charAt(i);
+	// 	if(char==str.charAt(i+1)){
+	// 		count++;
+	// 	}else{
+	// 		newStr+=char+count;
+	// 		count=1;
+	// 	}
+	// }
+	// alert(newStr);
+	var count=1;
+	var newStr="";
+
+	for(var i=0;i<str.length;i++){
+		var char=str.charAt(i);
+		if(char==str.charAt(i+1)){
+			count++;
+		}else{
+			newStr+=char+count;
+			count=1;
+		}
+	}
+	alert(newStr);
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水仙花数</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+
+	for(var i=100,count=0;i<=2000;i++){
+		var qian=parseInt(i/1000);
+		
+		var bai=parseInt(i%1000/100);
+
+		var shi=parseInt(i%100/10);
+		var ge=i%10;
+		
+		var result=bai*bai*bai+shi*shi*shi+ge*ge*ge+qian*qian*qian;
+		console.log(result);
+
+		
+		if(i==result){
+			document.write(i+" ");
+			count++;
+			if(count%3==0){
+				document.write("<br/>");
+			}
+		}
+	}
+
+
+
+</script>
+</html>

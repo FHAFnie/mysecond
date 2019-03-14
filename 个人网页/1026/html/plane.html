@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 600px;
+            border:1px solid red;
+            position:relative;
+            margin:20px auto;
+        }
+        #myPlane{
+            width: 98px;
+            height: 122px;
+            position:absolute;
+            background-image:url("../images/me.png");
+            background-size:98px 122px;
+        }
+        .bullet{
+            width: 8px;
+            height: 18px;
+            background-image: url("../images/bullet.png");
+            background-size: 100%;
+            position:absolute;
+        }
+        .plane1{
+            width: 58px;
+            height: 36px;
+            background-image: url("../images/plain1.png");
+            background-size: 100%;
+            position:absolute;
+        }
+        #countNum{
+            width: 200px;
+            height: 200px;
+            border:1px solid red;
+            position:absolute;
+            left: 100px;
+            top: 200px;
+            display: none;
+        }
+        #score{
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-indent: 10px;
+            left: 0;
+            top: 0;
+
+        }
+        #num{
+            color:red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="myPlane"></div>
+    <!--<div class="bullet"></div>-->
+    <div id="countNum"></div>
+    <div id="score">目前得分为：<span id="num"></span></div>
+</div>
+</body>
+<script>
+    var box=document.querySelector("#box");
+    var myPlane=document.querySelector("#myPlane");
+    var countNum=document.querySelector("#countNum");
+    var scoreDiv=document.querySelector("score");
+    var numSpan=document.querySelector("#num");
+    var myPlaneLife=5;
+    var bulletTimer=null;
+    var bulletSpeed=20;
+    var count=0;
+    box.onmousemove=function(e){//飞机移动事件
+        var evt=window.event||e;
+        var pageX=evt.pageX-box.offsetLeft-myPlane.offsetWidth/2;
+        var pageY=evt.pageY-box.offsetTop-myPlane.offsetHeight/2;
+        var maxX=box.offsetWidth-myPlane.offsetWidth;
+        var maxY=box.offsetHeight-myPlane.offsetHeight;
+        if(pageX<=0){
+            pageX=0;
+        }
+        if(pageY<+0){
+            pageY=0
+        }
+        if(pageX>=maxX){
+            pageX=maxX;
+        }
+        if(pageY>=maxY){
+            pageY=maxY;
+        }
+        myPlane.style.left=pageX+"px";
+        myPlane.style.top=pageY+"px";
+    }
+    createBullet();
+    bulletTimer=setInterval(createBullet,50);
+    function createBullet(){//创造子弹，并且移动
+        var div=document.createElement("div");
+        div.className="bullet";
+        box.appendChild(div);
+        div.style.left=parseInt(getStyleAttr(myPlane,"left"))+myPlane.offsetWidth/2+"px";
+        div.style.top=parseInt(getStyleAttr(myPlane,"top"))-div.offsetHeight+"px";
+        div.timer=setInterval(function(){
+            div.style.top=parseInt(getStyleAttr(div,"top"))-bulletSpeed+"px";
+            if(parseInt(getStyleAttr(div,"top"))<=-div.offsetHeight){
+                clearInterval(div.timer);
+                div.remove();
+            }
+        },100)
+    }
+    var planeTimer=null;
+    var planeSpeed=10;
+    planeTimer=setInterval(createPlane,300);
+//    console.log(bulletList);
+    createPlane();//创造敌机
+    function createPlane(){
+        var bulletList=document.getElementsByClassName("bullet");
+        var plane=document.createElement("div");
+        plane.className="plane1";
+        box.appendChild(plane);
+        plane.style.left=Math.round(Math.random()*(box.offsetWidth-plane.offsetWidth))+"px";
+        plane.style.top=0;
+
+        plane.timer=setInterval(function(){
+            plane.style.top=plane.offsetTop+planeSpeed+"px";
+            if(parseInt(getStyleAttr(plane,"top"))>=box.offsetHeight){
+                plane.remove();
+            }
+            for(var i=0;i<bulletList.length;i++){//在每一个飞机的定时器上，动态分析子弹的位置，判断飞机和子弹是否相撞了
+                var bullet=bulletList[i];
+                var bulletX=parseInt(getStyleAttr(bullet,"left"));
+                var bulletY=parseInt(getStyleAttr(bullet,"top"));
+
+                var minX=plane.offsetLeft-bullet.offsetWidth;
+                var maxX=plane.offsetLeft+parseInt(getStyleAttr(plane,"width"));
+                var minY=plane.offsetTop-parseInt(getStyleAttr(bullet,"height"));
+                var maxY=plane.offsetTop+parseInt(getStyleAttr(plane,"height"));
+//                console.log(bulletX,bulletY,minX,maxY);
+
+
+                if(bulletX>=minX&&bulletX<=maxX&&bulletY>=minY&&bulletY<=maxY){//子弹和飞机的碰撞条件
+                    clearInterval(bullet.timer);
+                    count+=1;
+                    numSpan.innerHTML=count;
+                    bullet.remove();
+                    plane.style.backgroundImage="url("+"../images/plain1_die2.png"+")";
+//                    plane.style.top=parseInt(getStyleAttr(plane,"top"))+"px";
+                    setTimeout(function(){
+                        clearInterval(plane.timer);
+                        plane.remove();
+                    },300)
+                }
+            }
+            var myPlaneX=parseInt(getStyleAttr(myPlane,"left"));
+            var myPlaneY=parseInt(getStyleAttr(myPlane,"top"));
+            var myPlaneMinX=plane.offsetLeft-myPlane.offsetWidth;
+            var myPlaneMaxX=plane.offsetLeft+parseInt(getStyleAttr(plane,"width"));
+            var myPlaneMinY=plane.offsetTop-parseInt(getStyleAttr(myPlane,"height"));
+            var myPlaneMaxY=plane.offsetTop+parseInt(getStyleAttr(plane,"height"));
+            if(myPlaneX>=myPlaneMinX&&myPlaneX<+myPlaneMaxX&&myPlaneY>=myPlaneMinY&&myPlaneY<=myPlaneMaxY){
+                plane.style.backgroundImage="url("+"../images/plain1_die2.png"+")";
+//                    plane.style.top=parseInt(getStyleAttr(plane,"top"))+"px";
+                count+=1;
+                numSpan.innerHTML=count;
+                setTimeout(function(){
+                    clearInterval(plane.timer);
+                    plane.remove();
+                },300)
+                myPlaneLife--;
+                console.log(myPlaneLife);
+                if(myPlaneLife<=0){
+                    myPlaneLife=5;
+                    myPlane.style.backgroundImage="url("+"../images/me_die3.png"+")";
+                    setTimeout(function(){
+                        clearInterval(bulletTimer);
+                        clearInterval(planeTimer);
+//                        myPlane.remove();
+                        box.onmousemove=null;
+                        countNum.innerHTML="你的最终得分为："+count;
+                        countNum.style.display="block";
+
+                    },1000)
+                }
+            }
+        },100)
+    }
+    function getStyleAttr(obj,attr){
+        if(window.getComputedStyle){
+            return window.getComputedStyle(obj)[attr];
+        }else{
+            return obj.currentStyle[attr];
+        }
+    }
+</script>
+</html>

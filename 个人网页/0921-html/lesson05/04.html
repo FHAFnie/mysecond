@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //素数判断条件(针对大于2的数   只能被1和它本身整除的数)
+
+    var num = 153; //让151 去除 2  3  4  ......150 看能否有整除的数  如果有就非素数  没有就是素数
+    var count = 0;
+    for (var i = 2; i < 153; i++) {
+        if (num % i == 0) {
+            count++;
+        }
+    }
+    if (count > 0) {
+        document.write(num + "是一个非素数");
+    } else {
+        document.write(num + "是一个素数");
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li class="first" id="first" style="color:red">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script>
+	var firstLi= document.getElementsByTagName("li")[0];
+	// firstLi.Attribute(),元素的属性和其对应的值
+	var item =firstLi.getAttribute("class");//获取class属性的值
+	var item1=firstLi.getAttribute("id");//获取id属性的值
+	var item2=firstLi.getAttribute("style");//获取style属性的值
+	console.log(item,item1,item2);//first first color:red
+	first.setAttribute("class","the first");//重新设置class名为the first
+	first.setAttribute("style","border:1px solid");//重新设置style样式为添加边框（原来的字体红色会被覆盖）
+	first.removeAttribute("style");//删除元素的style属性，即把边框属性删掉
+	
+</script>
+</html>

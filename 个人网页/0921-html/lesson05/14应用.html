@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">计算</button>
+<p id="demo"></p>
+</body>
+<script>
+
+
+    var btn = document.getElementById("btn");
+    function say() {
+    	alert("666");
+       // return "666";
+    }
+     // document.getElementById("demo").innerHTML=say;
+     // 不会出现666
+     // document.getElementById("demo").innerHTML=say();
+     // 会出现666
+    btn.onclick = say();
+
+
+</script>
+</html>

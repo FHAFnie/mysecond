@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位上下左右</title>
+	<style type="text/css">
+		.a{width: 200px;height: 400px;background-color: orange;position:relative;overflow:hidden;float: left;margin-right: 40px;}
+		.a1{width: 100px;height: 50px;background-color:rgba(0,0,0,.5);position:absolute;top:-50px;left:-100px;transition:2s;}
+		.a:hover .a1{top:350px;left: 50px;}
+
+
+		.d{width: 200px;height: 400px;background-color: orange;position:relative;overflow:hidden;float: left;margin-right: 40px;}
+		.d1{width: 100px;height: 50px;background-color:rgba(0,0,0,.5);position:absolute;top:-50px;right:-100px;transition:2s;}
+		.d:hover .d1{top:350px;right: 50px;}
+
+
+		.b{width: 200px;height: 400px;background-color: orange;position:relative;/*overflow:hidden;*/float: left;margin-right: 40px;}
+		.b1{width: 100px;height:100px;background-color:rgba(0,0,0,.5);position:absolute;top:400px;height:0;transition:2s;overflow:hidden;}
+		.b:hover .b1{height:100px;}
+
+
+
+		.c{width: 200px;height: 400px;background-color: orange;position:relative;/*overflow:hidden;*/float: left;margin-right: 40px;}
+		.c1{width: 100px;height:100px;background-color:rgba(0,0,0,.5);position:absolute;left:200px;top:0;width:0;transition:2s;overflow:hidden;}
+		.c:hover .c1{width:100px;}
+
+
+	</style>
+</head>
+<body>
+	<div class="a">
+		<div class="a1">123564</div>
+	</div>
+
+	<div class="b">
+		<div class="b1">123564</div>
+	</div>
+
+	<div class="c">
+		<div class="c1">123564</div>
+	</div>
+
+	<div class="d">
+		<div class="d1">123564</div>
+	</div>
+
+</body>
+</html>

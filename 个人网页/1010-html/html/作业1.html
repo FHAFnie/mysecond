@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动获取指定的标签</title>
+</head>
+<body>
+	<ul>
+    <li id="first">1</li>
+    <li class="middle">2</li>
+    <li class="middle">3</li>
+    <li>4</li>
+    <li id="last">5</li>
+</ul>
+<ul>
+    <li>1.1</li>
+    <li>1.2</li>
+    <li>1.3</li>
+    <li>1.4</li>
+    <li>1.5</li>
+</ul>
+</body>
+<script>
+	var ulList = document.getElementsByTagName("ul");
+    var secondUL = ulList[1];//找到第二个UL
+    var liList = secondUL.getElementsByTagName("li");
+
+   // $("#first") //把id为first的找出来
+    //$(".middle") //把页面所有class为middle的找出来
+    //$("ul")  //把页面的所有ul照处理
+    //$("ul li")  //把第一个ul下面的li找出来
+    //
+    
+    var str ="ul li";
+    // alert(str.substring(1));
+
+   
+   function  $(str){
+   		var char = str.charAt(0);
+   		var target;
+   		if(char=="#"){//通过id取出
+   			var item = str.substring(1);
+   			// alert(item);
+   			target=document.getElementById(item);
+   		}else if(char=="."){
+   			var item = str.substring(1);
+   			// alert(item);
+   			target = document.getElementsByClassName(item);
+   		}else{
+   			if(str.indexOf(" ")==-1){
+   				target=document.getElementsByTagName(str);
+   			}else{
+   				var nameList=str.split(" ");
+   				// alert(nameList);
+   				var tempList=document.getElementsByTagName(nameList[0]);
+   				// console.log(tempList[0],nameList[1]);
+   				var tempList1 = tempList[0].getElementsByTagName(nameList[1]);//获取第一个ul里面的所有li
+   				console.log(tempList1);//递归来实现所有的
+   			}
+   		}
+
+   		return target;
+   }
+   console.log($(str));
+   
+
+
+	
+</script>
+</html>

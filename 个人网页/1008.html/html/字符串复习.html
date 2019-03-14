@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串复习</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// 1.声明， ""  '' ``   String  new String(){声明的方式会有一些不一样，但是也是string类型}
+	var str = `abcdefg hello`;
+	console.log(typeof str,str);//string abcdefg
+	var str = new String("abcdefg");
+	console.log(typeof str,str,str instanceof String);//object String {0: "a", 1: "b", 2: "c", 3: "d", 4: "e", 5: "f", 6: "g", length: 7, [[PrimitiveValue]]: "abcdefg"} true
+	// 2.charAt   charCodeAt      String.fromCharCode()
+	// charAt---按照字符串的下标取值
+	var char = str.charAt(2);
+	console.log(char);//c,c对应的下标为2
+	// charCodeAt，将对应下标的字符转换成对应的字符编码，不会改变原字符串
+	console.log(str.charCodeAt(2));//99,c对应的字符编码为99
+	//  String.fromCharCode()，从字符编码转化成对应的字符
+	console.log(String.fromCharCode(99));//c,99对应的字符为c
+
+	// 扩展方法
+	// 1.indexOf，判断是否有符合的字符，如果有，返回对应下标，没有，则返回-1
+	console.log(str.indexOf("c"),str.indexOf("1"));//2 -1,c对应下标为2，str中没有字符”1“，所以返回-1
+	// 2.search，查找数组中的元素（符合要求的），符合则返回起始下标，不符合，则返回-1
+	var newStr = "hello world";
+	console.log(newStr,newStr.search("llo"),newStr.search("lloe"));//hello world 2 -1
+	// 3.match,查找数组中的元素，符合则，返回查找目标的数组，否则，返回-1,有地方显示返回null
+	// https://blog.csdn.net/w124374860/article/details/52600743
+	// http://www.w3school.com.cn/jsref/jsref_match.asp
+	// https://blog.csdn.net/qq_36090159/article/details/79035330
+	
+	console.log(newStr,newStr.match("llo"),newStr.search("lloe"));//hello world ["llo", index: 2, input: "hello world"] -1
+	// 4.replace，先查找到指定的类容，然后替换
+	// http://www.w3school.com.cn/jsref/jsref_replace.asp
+	console.log(newStr,"改成了",newStr.replace("hello","nihao"));//hello world 改成了 nihao world
+	// 5.split,分割字符串，返回为有分割的部分组成的数组，两个参数，第一个设置按什么分割，第二个，可以设置分割后生成的数组的最大长度（如果分割的内容比长度大，则会，省略一部分）,可以不写
+	// http://www.w3school.com.cn/jsref/jsref_split.asp
+	var str="nihao world hh";
+	console.log(str,str.split(" ",3));//nihao world hh ["nihao", "world", "hh"]
+
+	// 6.trim，去除左右空格,中间的空格去不了
+	var str ="   ab  c   ";
+	console.log(str,"去掉左右空格后",str.trim());//   ab  c    去掉左右空格后 ab  c
+	// 7.toUpperCase，大写字母转小写
+	var str="abc"
+	console.log(str,str.toUpperCase());//abc ABC
+	// 8.substring(star,end),还有一个为substr-----
+	// 截取，第一个为起始下标，第二个为终止下标，如果不写，则到最后，不接受负的参数,返回截取的字符串
+	// https://blog.csdn.net/superit401/article/details/72353183
+	// http://www.w3school.com.cn/jsref/jsref_substring.asp
+	var str="nihao world hh";
+	console.log(str.substring(1,5),"截取部分",str);//ihao 截取部分为 nihao world hh
+
+	// 9.slice
+	// 
+	// 10.表单验证
+	
+	
+	
+	
+</script>
+</html>

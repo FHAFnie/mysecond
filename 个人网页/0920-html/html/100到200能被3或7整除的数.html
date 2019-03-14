@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>100到200能被3或7整除的数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	document.write("100到200中能被3或者7整除的数有：<br/>")
+	var count = 0;
+	for(var i=100;i<=200;i++){
+		if(i%3==0||i%7==0){
+			document.write(i+" ");
+			count++;
+			if(count%4==0){
+				document.write("<br/>")
+			}
+			
+		}
+	}
+</script>
+</html>

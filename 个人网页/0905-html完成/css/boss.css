@@ -1,0 +1,61 @@
+*{padding: 0;margin: 0;}
+li{list-style: none;}
+input:focus{outline:none;}
+img{vertical-align: top;}
+a{text-decoration: none;}
+
+
+
+.cl:after{content: "";display:block;clear:both;}
+.box1{width: 100%;background-color: #fff;}
+.box1 .nav{width: 1171px;background-color: #ff0;margin:auto;line-height: 100px;}
+.box1 .nav h1{width: 94px;line-height: 100px;font-size: 0;float: left;}
+.box1 .nav h1 i{display:inline-block;width: 55px;height: 54px;background:url(../images/3.png) no-repeat 0 -61px;vertical-align: middle;}
+
+.box1 .nav li{width: 107px;line-height: 100px;font-style: 0;text-align: center;float: left;}
+.box1 .nav .a{width: 70px;line-height: 100px;font-style: 0;text-align: center;float: left;}
+.box1 .nav li a{display:inline-block;width: 107px;vertical-align: middle;font-size: 12px;color:#333;}
+.box1 .nav li:first-child a{color:#53cac3;}
+
+.box1 .sj{float: right;line-height: 100px;font-size: 0;}
+.box1 .sj a{display:inline-block;width: 105px;font-size: 14px;color:#676767;background-color: #f0f;border-right:1px solid #e5e5e5;line-height: 22px;background:url(../images/3.png) no-repeat;text-indent: 30px;}
+.box1 .sj .a1{background-position: 0 0;margin-right:20px;}
+.box1 .sj .a2{background-position: 0 -29px;padding-left:19px;border:0;}
+
+
+
+
+
+.box2{width: 100%;background:url(../images/4.png);}
+.box2 .ts{width: 1171px;margin:auto;/*background-color: red;*/line-height: 70px;font-size: 0;}
+.box2 .ts p{width: 1171px;line-height: 70px;display:inline-block;vertical-align: middle;font-size: 12px;text-align: center;}
+
+
+
+
+
+
+
+.box3{width: 100%;background-color: #f3f3f3;}
+.box3 .b{width: 1171px;background-color: orange;margin:auto;}
+.box3 .b1{float: left;width: 265px;border-left:1px solid #e3e6e6;border-right:1px solid #e3e6e6;background-color: #fff;}
+
+.box3 .b2{width: 872px;line-height: 58px;font-size: 0;float: right;border:1px solid #e0e0e0;margin-bottom: 15px;padding-left: 20px;}
+
+.box3 .b2 .sr{width: 759px;border:0;line-height: 58px;float: left;font-size: 16px;/*text-indent: 10px;*/}
+.box3 .b2 .ss{width: 99px;line-height: 45px;vertical-align: middle;text-align: center;background-color: #5ecfc9;/*margin-right: 5px;*/font-size: 20px;color:#fff;border:0;float: left;margin:6px;}
+
+
+.box3 .b2 .gw{width: 872px;background:red url(../images/bg.jpg) no-repeat right top;/*line-height: 133px;*/}
+
+
+
+
+
+
+
+
+
+
+
+

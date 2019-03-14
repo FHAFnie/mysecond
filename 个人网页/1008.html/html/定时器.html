@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+</head>
+<body>
+	<p id="demo"></p>
+</body>
+<script>
+	var endTime = new Date(2019,01,01,0,0,0,0);
+	function getTime(time){
+		time = endTime;
+		var date = new Date();
+		var residueTime=time -date;
+		var days = parseInt(residueTime/(24*60*60*1000));
+		days = days>=10?days:"0"+days;
+		var hours = parseInt((residueTime%(24*60*60*1000))/(60*60*1000));
+		hours = hours>=10?hours:"0"+hours;
+		var minutes = parseInt(residueTime%((60*60*1000))/(60*1000));
+		minutes = minutes>=10?minutes:"0"+minutes;
+		var seconds = parseInt((residueTime%(60*1000)/1000));
+		seconds = seconds>=10?seconds:"0"+seconds;
+		document.getElementById("demo").innerHTML = `离元旦还有：${days}天${hours}小时${minutes}分${seconds}秒`;
+	}
+	getTime();
+	var timer = setInterval(getTime,1000);
+</script>
+</html>

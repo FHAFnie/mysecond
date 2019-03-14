@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机上字体小于12px的情况</title>
+	<style class="text/css">
+		li{list-style: none;}
+		ul{width: 500px;margin: 300px;}
+		ul li{/*height: 40px;*/width: 40px;margin-right:20px;float: left;background-color: #f0f;text-align: center;font-size: 0;position:relative;}
+
+		ul li img{width: 40px;display: block;}
+
+		/*字体大小变小，用scale缩放整个盒子来实现，另外直接定位上图中的位置上即可*/
+		ul li span{display: block;width: 12px;height: 12px;font-size: 12px;
+			transform:scale(.8);position:absolute;right: -10px;top: -5px;color:red;font-weight: bold;}
+	</style>
+</head>
+<body>
+	<ul class="cl">
+		<li>
+			<img src="../images/2.png" alt="">
+			<!-- span里面可以是标签，也可以是数字显示消息数量 -->
+			<span>9+</span>
+		</li>
+		
+		<li>
+			<img src="../images/2.png" alt="">
+			<!-- span里面可以是标签，也可以是数字显示消息数量 -->
+			<span>9+</span>
+		</li>
+		<li>
+			<img src="../images/2.png" alt="">
+			<!-- span里面可以是标签，也可以是数字显示消息数量 -->
+			<span>9+</span>
+		</li>
+		<li>
+			<img src="../images/2.png" alt="">
+			<!-- span里面可以是标签，也可以是数字显示消息数量 -->
+			<span>9+</span>
+		</li>
+	</ul>
+</body>
+</html>

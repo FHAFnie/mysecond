@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>杨幂选项卡js操作</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		.cl:after{content:"";display: block;clear:both;}
+
+		ul,li{list-style: none;}
+		#box{
+			width: 700px;
+			margin: 200px;
+		}
+		#xh li{
+			
+			float: left;
+			width: 100px;
+			height:30px;
+			line-height: 29px;
+			font-size: 16px;
+			text-align: center;
+			background-color: orange;
+			box-sizing:border-box;
+			border-radius: 5px;
+		}
+		#xh li:hover{cursor:pointer;
+			background-color:blue;
+			color:red;
+			border-bottom:1px solid red;
+		}
+		#img{
+			width: 700px;
+			height: 700px;
+		}
+	</style>
+</head>
+<body>
+	 <div id="box">
+	 	<ul id="xh"  class="cl">
+	 		<li onclick="lb('yangmi1.jpg')">一</li>
+	 		<li onclick="lb('yangmi2.jpg')">二</li>
+	 		<li onclick="lb('yangmi3.jpg')">三</li>
+	 		<li onclick="lb('yangmi4.jpg')">四</li>
+	 		<li onclick="lb('yangmi5.jpg')">五</li>
+	 		<li onclick="lb('yangmi6.jpg')">六</li>
+	 		<li onclick="lb('yangmi.jpg')">七</li>
+	 	</ul>
+	 	<img src="../images/yangmi1.jpg" alt="" id="img">
+	 </div>
+</body>
+<script>
+
+
+	function lb(username){
+		var img = document.getElementById("img");
+		img.src = "../images/"+username;
+		
+	}
+</script>
+</html>

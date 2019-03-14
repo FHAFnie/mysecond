@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>年月日判断</title>
+</head>
+<body>
+	<input type="text" id="year">年
+	<input type="text" id="month">月
+	<input type="text" id="day">日
+	<button id="btn">判断日期格式是否合法</button>
+</body>
+<script>
+	// 过程
+	// 1.通过id查找到年月日对象
+	// 2.取出其value值，并赋值给新的变量
+	// 3.判断年分的合法性
+	// 年份合法后，看月份是否合法
+	// 月份合法后，看天数是否合法
+	// 
+	// 
+	var btn = document.getElementById("btn");
+	btn.onclick = function(){
+
+		var yearInput = document.getElementById("year");
+		var year = yearInput.value;
+
+
+
+		if(year>=1500 && year<=3000 &&year%1 == 0){
+			// alert("年份合法");
+			var monthInput = document.getElementById("month");
+			var month = monthInput.value;
+			// alert("month")
+			if (month>=1 && month<=12 && month%1 == 0) {
+				// alert("月份合法")
+				// 判断天数是否合法
+				// 
+				// 这一段目的是给不同的月份，配置最高天数
+				var maxDay = 31;
+				if (month==4||month==6||month==9||month==11) {
+					maxDay =30; 
+				}
+				if(month==2){
+					var feb = 28;
+					if(year%400==0||year%4==0&&year%100!=0){
+						feb = 29;
+					}
+					maxDay = feb;
+				}
+				// 此处为，取出输入的天数值，然后与对应的天数做对比，判断
+				var dayInput = document.getElementById("day");
+				var day = dayInput.value*1;
+
+
+				// var num = day;
+				// alert(num);
+				// 
+				// 
+				// 
+				
+
+
+
+
+				if(day>=1&&day<=maxDay&&day%1==0){
+					alert("日期合法")
+
+
+
+				
+				// if(month==1){
+				// 		var num = day;
+				// 		alert(num);
+				// 		// alert(year+"年"+month+"月"+day+"日是"+year+"年的第"+num+"天") 
+				// 	}else if(month==2){
+				// 		var num = 31 + day;
+				// 		alert(num);
+				// 	}else if(){}
+
+
+
+
+
+
+				}else{
+					alert("天数不合法")
+				}
+
+			}else{
+				alert("月份不合法")
+			}
+
+
+		}else{
+			alert("不合法");
+		}
+
+
+
+
+
+
+
+		// 判断天数
+
+
+		if(month==1){
+			var num = day;
+			alert(num);
+			// alert(year+"年"+month+"月"+day+"日是"+year+"年的第"+num+"天") 
+		}
+
+	
+	}
+
+
+</script>
+</html>

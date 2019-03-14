@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //calc(1,9,"/")
+
+    function calc(num1, num2, opt) {
+
+        //var num1 =1 ; var num2= 9  ;var opt = "/";
+        var result = 0;
+        switch (opt) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+        }
+
+        return result;
+
+        //alert(result);
+    }
+
+    alert(calc(9, 8, "+"))
+
+
+</script>
+</html>

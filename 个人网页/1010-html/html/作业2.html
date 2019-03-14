@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项</title>
+	<style>
+		ul{
+			width: 300px;
+			margin:50px auto;
+		}
+		ul li{
+			width: 150px;
+			line-height: 30px;
+			/*background-color: #f0f;*/
+			color:#00f;
+			text-align: center;
+			list-style: none;
+
+		}
+		.oriColor{
+			background-color: #0f0;
+		}
+		.changeColor{
+			background-color: #f0f;
+		}
+	</style>
+</head>
+<body>
+	<ul id="box">
+		<li style="">1</li>
+		<li style="">2</li>
+		<li style="">3</li>
+		<li style="">4</li>
+		<li style="">5</li>
+	</ul>
+</body>
+<script>
+	var ulBox = document.getElementById("box");
+	var liList = ulBox.getElementsByTagName("li");
+
+	for(var i=0;i<liList.length;i++){
+		var li = liList[i];
+		li.setAttribute("class","oriColor");
+		li.onclick=function(){
+			for(var j=0;j<liList.length;j++){
+				liList[j].setAttribute("class","oriColor");
+			}
+			if(this.className=="oriColor"){
+				this.setAttribute("class","changeColor");
+			}else{
+				this.setAttribute("class","oriColor");
+			}
+		}
+	}
+
+
+
+</script>
+</html>

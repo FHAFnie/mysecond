@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	
+	for(j=2;j<=500;j++){
+		var num =j;
+		var flag=true;
+		for(var i=2;i<num;i++){
+			if(num%i==0){
+				flag = false;
+				break;
+			}
+		}
+		if(!flag){
+			document.write(num+"至少可以被"+i+"整除"+"<br/>");
+		}
+	}
+
+
+
+</script>
+</html>

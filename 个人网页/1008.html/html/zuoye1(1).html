@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业1</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	var arr=["a","b","c","d","e","f"];
+	function getArr(arr){
+		if(arr.length==2){
+			return [[arr[0],arr[1]],[arr[1],arr[0]]];
+		}
+		var all=[];
+		for(var i=0;i<arr.length;i++){//外层循环将其中的一个字符抽出来，剩下的进行排序
+			var first=arr[i];
+			var newArr=arr.concat();//为了不使后面的splice操作影响arr，声明一个新的数组newArr，此时改变newArr，不会影响到arr
+			newArr.splice(i,1);//将newArr中下标为i的字符删除
+
+			var combArr = getArr(newArr);//得到的新数组再调用一次函数得到的结果返回给combArr，如果新数组newArr长度为2，直接返回，如果不为2，则又要进行裁剪操作//此处会一直进行裁剪知道最后数组长度为2
+			// console.log(combArr);
+			for(var j=0;j<combArr.length;j++){//如果执行这里，说明，前面已经执行完毕，现在需要将首字符（first）和combArr拼接起来
+				combArr[j].unshift(first);
+				all.push(combArr[j]);
+			}
+		}
+		return all;
+	}
+	console.log(getArr(arr));
+	
+</script>
+</html>

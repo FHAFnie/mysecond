@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断输入名是否合法</title>
+	<script src="../../js/common.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	// 大写
+	var bigCodeList = [];
+	for(var i=65;i<(65+26);i++){
+		bigCodeList.push(String.fromCharCode(i));
+	}
+	// alert(bigCodeList);
+// 小写
+	var lowreCodeList = [];
+	for(var i=97;i<(97+26);i++){
+		lowreCodeList.push(String.fromCharCode(i));
+	}
+	// alert(lowreCodeList);
+// 数字
+ 	var numList = [];
+ 	for(var i=0;i<=9;i++){
+ 		numList.push(String(i));
+ 	}
+ 	// alert(numList);
+// 其他字符
+var otherList = ["$","_"];
+    for (var i = 65; i < (65 + 26); i++) {//大写A到Z的编码
+        var code = String.fromCharCode(i);
+        bigCodeList.push(code);
+    }
+
+// 封装一个函数判断字符是否小写
+var str = "a";
+	function sfxx(str,lowreCodeList){
+			var flag = false;
+			for(var i=0;i<lowreCodeList.length;i++){
+				var item = lowreCodeList[i];
+				// console.log(item);
+				if(str ===item){
+					flag = true;
+					break;
+				}
+			}
+			return flag;
+	}
+// alert(sfxx("a",lowreCodeList));
+	
+
+// 封装一个函数判断字符是否大写
+var str = "a";
+	function sfdx(str,bigCodeList){
+			var flag = false;
+			for(var i=0;i<bigCodeList.length;i++){
+				var item = bigCodeList[i];
+				// console.log(item);
+				if(str ===item){
+					flag = true;
+					break;
+				}
+			}
+			return flag;
+	}
+
+
+
+
+// 大数组
+// 
+ var bigList = bigCodeList.concat(lowreCodeList,numList,otherList);
+ // alert(bigList);
+// alert(sfxx("a",bigCodeList));
+// 判断是否为数字
+// 
+// 
+// var con = 9;
+// var flag = false;
+// function isnum()
+// for(var i=0;i<numList.length;i++){
+// 	if(con==numList[i]){
+// 		flag = true;
+// 	}
+// }
+
+
+
+
+
+
+	var username = "xinrenjia_$11212";
+
+// 用户名是否合法
+pdyhm(username,bigList);
+
+
+function pdyhm(username,list){
+
+	if(username.length>=6&&username.length<20){
+		var con = username.charAt(0);
+		if(isNaN(con)){
+
+			for(var j=0;j<username.length;j++){
+				var item = username.charAt(j);
+				var index = indexOf(item,bigList);
+			}
+			if(index==-1){
+				return document.write("不能使用数字字母$和_以外的字符");
+						
+			}else{
+				return document.write("用户名合法");
+						
+			}
+
+			
+		}else{
+			return document.write("不能用数字开头");
+		}
+
+	}else{
+		return document.write("用户名长度不合法");
+	}
+}
+
+
+	// if(username.length>=6&&username.length<20){
+	// 	var con = username.charAt(0);
+	// 	if(isNaN(con)){
+
+	// 		for(var j=0;j<username.length;j++){
+	// 			var item = username.charAt(j);
+	// 				var index = indexOf(item,bigList);
+
+					
+	// 		}
+	// 		if(index==-1){
+	// 			document.write("不能使用数字字母$和_以外的字符");
+						
+	// 		}else{
+	// 			document.write("用户名合法");
+						
+	// 		}
+
+			
+	// 	}else{
+	// 		document.write("不能用数字开头");
+	// 	}
+
+	// }else{
+	// 	document.write("用户名长度不合法");
+	// }
+
+
+
+
+
+
+	
+	
+	
+
+
+</script>
+</html>

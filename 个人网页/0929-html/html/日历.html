@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<script src="../js/date.js"></script>
+	<style>
+		body,h1,h2,h3,h4,h5,h6,p{
+			padding: 0;
+			margin: 0;
+		}
+		ul,dl,li,dd{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#date{
+			width: 210px;
+			margin:100px auto;
+		}
+		#header{
+			width: 210px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: #000;
+			color:#fff;
+		}
+		#header span{
+			float: left;
+			height: 30px;
+			line-height: 30px;
+		}
+		#up{
+			width: 20%;
+		}
+		#mid{
+			width: 60%;
+		}
+		#under{
+			width: 20%;
+		}
+		#th{
+			width: 210px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: #000;
+			color:#fff;
+		}
+		#th li{
+			float: left;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+
+		}
+		#days{
+			width: 210px;
+			height: 180px;
+			background-color: #000;
+			color:#fff;
+			text-align: center;
+		}
+		#days li{
+			float: left;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="date">
+		<div id="header">
+			<span id="under"><</span>
+			<span id="mid">2018-09-29</span>
+			<span id="up">></span>
+		</div>
+		<ul id="th">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<ul id="days"></ul>
+	</div>
+</body>
+<script>
+	// var date = new Date("2018-03-20");
+	// console.log(date);
+	// 获取当月的天数
+	// alert(getMonthDays(date));//获取给定日期当前月份的天数
+	// alert(getMonthWeek(date));//获取给定日期是星期几
+	// alert(gerLastMonthDays(date));//获取给定日期上个月有多少天
+	// 
+	// 
+	var date = new Date();
+	changDate(date);
+
+
+function changDate(date){
+	
+	var upMid = document.getElementById("mid");
+	var daysNumber = document.getElementById("days");
+	var up = document.getElementById("up");
+
+	// var date = new Date();
+	upMid.innerHTML =date.getFullYear()+"年"+(date.getMonth()+1)+"月";
+
+
+	var html="";
+	var dayNum = getMonthDays(date);
+	// alert(dayNum);
+	var weekNum = getMonthWeek(date);
+
+	var lastMonthDays = gerLastMonthDays(date);
+	// alert(lastMonthDays);
+
+	// alert(weekNum);
+	if(weekNum==0){
+		weekNum=7;
+	}
+	// for(var i=0;i<weekNum-1;i++){//上个月天数
+	// 	html+="<li>"+"上"+"</li>";
+	// }
+	var lastDs=lastMonthDays-weekNum+1;
+	for(var i=0;i<weekNum-1;i++){
+		html+="<li>"+(lastDs+1)+"</li>";
+		lastDs++;
+	}
+	for(var i=1;i<=dayNum;i++){//当月天数
+		html+="<li>"+i+"</li>";
+	}
+	for(var i=1;i<=(42-weekNum-dayNum+1);i++){//下个月天数
+		html+="<li>"+i+"</li>"
+	}
+	daysNumber.innerHTML = html;
+
+under.onclick=function(){
+		// var temp=new Date("2018-01-01");
+		var temp = new Date();
+		// alert(temp);
+		temp.setDate(1);//排除2月28和29的影响
+		temp.setFullYear(date.getFullYear());
+		temp.setMonth(date.getMonth());
+		// alert(temp.getMonth());
+		temp.setMonth(temp.getMonth()-1);
+		
+		// alert(temp.getMonth());
+		// console.log(temp);
+		changDate(temp);
+		// alert(temp);
+		// return temp;
+	}
+
+up.onclick=function(){
+		
+		var temp = new Date();
+		// alert(temp);
+		temp.setDate(1);//排除2月的天数的影响
+		temp.setFullYear(date.getFullYear());
+		temp.setMonth(date.getMonth());
+		
+		temp.setMonth(temp.getMonth()+1);
+		
+		changDate(temp);
+	}
+}
+
+
+
+
+
+	
+	
+
+	
+
+
+
+</script>
+</html>

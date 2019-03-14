@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动条到达底部</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	// var scrolltop = document.documentElement.scrollTop||document.body.scrollTop;
+	// alert(scrolltop);
+	// var clientheight =document.documentElement.clientHeight||document.body.clientHeigth;
+	// alert(clientheight);
+	// var scrollheight = document.documentElement.scrollHeight||document.body.scrollHeight;
+	// alert(scrollheight);
+	window.onscroll=function(){
+		var scrolltop = document.documentElement.scrollTop||document.body.scrollTop;
+		console.log(scrolltop);
+		var clientheight =document.documentElement.clientHeight||document.body.clientHeigth;
+		// console.log(clientheight);
+		var scrollheight = document.documentElement.scrollHeight||document.body.scrollHeight;
+		// console.log(scrollheight);
+		if((scrolltop*1+clientheight*1)>=scrollheight){
+			console.log("到底了");
+		}
+	}
+</script>
+</html>

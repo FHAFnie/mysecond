@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂验证码</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#box{
+			width: 300px;
+			height: 400px;
+			text-align: center;
+			background-color: #ff0;
+			margin: 100px auto;
+		}
+		#btn{
+			margin-top: 10px;
+			width: 150px;
+			height: 30px;
+			line-height: 30px;
+		}
+		.code{
+			width: 250px;
+			height: 300px;
+			background-color: #f0f;
+			margin:20px auto;
+			position:relative;
+		}
+		#code span{
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			display: inline-block;
+			/*position:absolute;*/
+
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div id="box">
+		<button id="btn">点击获取验证码</button><br/>
+		<div class="code" id="code">
+			<span id="code1">ds</span>
+			<span id="code2">asdf</span>
+			<span id="code3">sadf</span>
+			<span id="code4">sdaf</span>
+		</div>
+	</div>
+	
+</body>
+<script>
+	var list=["你","好","码","嗯","不","行","可","以","的","搜","所"];
+
+	var btn=document.getElementById("btn");
+	var code=document.getElementById("code");
+	var code1Span=document.getElementById("code1");
+	// alert(code1Span.innerHTML);
+	var code2Span=document.getElementById("code2");
+	// alert(code2Span.innerHTML);
+	var code3Span=document.getElementById("code3");
+	// alert(code3Span.innerHTML);
+	var code4Span=document.getElementById("code4");
+	// alert(code4Span.innerHTML);
+	
+	// alert(positionGener(250,4));
+
+	btn.onclick=function(){
+		var str = codeCheck(list,4);
+		btn.innerHTML=str;
+		// alert(str);
+		// for(var i=0;i<4;i++){
+		// 	var item = str.charAt(i);
+		// 	var num1=positionGener(250,4)[i];
+
+		// 	var num2=positionGener(300,4)[i];
+		// 	console.log(num1,num2);
+
+		// 	code.innerHTML +="<span style='position:absolute;left:num1;top:num2'>"+item+"</span>";
+		// 	code.innerHTML+=`<span style="position:absolute;left:num1;top:num2">${item}</span>`;
+
+		// }
+
+		var num1=positionGener(250,4)[0];
+		var num2=positionGener(300,4)[0];
+		console.log(typeof num1,num1,num2);
+
+		code1Span.style.left=num1+"px";
+		code1Span.style.top=panum2+"px";
+
+		code1Span.innerHTML=str.charAt(0);
+		code2Span.innerHTML=str.charAt(1);
+		code3Span.innerHTML=str.charAt(2);
+		code4Span.innerHTML=str.charAt(3);
+
+
+	}
+	function positionGener(num1,num2){
+		var positionList=[];
+		for(var i=0;i<num2;i++){
+			var num = Math.round(Math.random()*num1);
+			if(positionList.indexOf(num)==-1){
+				positionList.push(num);
+			}else{
+				i--;
+			}
+		}
+		return positionList;
+	}
+
+	
+
+	
+
+
+
+	function codeCheck(list,len){
+		var str="";
+		for(var i=0;i<len;i++){
+			var index=Math.round(Math.random()*(list.length-1));
+			var item=list[index];
+			if(str.indexOf(item)==-1){
+				str+=item;
+			}else{
+				i--;
+			}
+		}
+		return str;
+	}
+
+
+
+	
+
+
+
+	
+
+
+</script>
+</html>

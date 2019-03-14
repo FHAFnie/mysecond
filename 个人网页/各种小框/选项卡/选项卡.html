@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+		
+
+
+		/*设置大盒子的宽高和颜色样式等，相对定位*/
+		.xuanxiangka{width: 600px;height: 50px;background-color: #000;margin: 100px;position:relative;}
+		/*设置li的样式（宽高及颜色样式等，横排显示需要浮动）*/
+		.xuanxiangka li{width: 50px;/*line-height: 100px;*/background-color: #f0f;margin: 0 20px;float: left;}
+		/*label标签是个行内元素，不能支持宽高，需要转化一下，并且需要设置label中的文字(选项中的文字)样式还有位置，比较重要*/
+		.xuanxiangka li label{display: block;line-height: 50px;text-align: center;}
+		/*input中的单选图标，在最终结果里面没有显示，所以需要将其隐藏起来，display：none；*/
+		.xuanxiangka li input{display: none;}
+		/*设置选项卡下拉菜单中的具体内容，样式以及位置（重要，设置显示位置，定位实现）等*/
+		.xuanxiangka li .pic{width: 300px;height: 500px;background-color: #f00;text-align: center;display: none;position:absolute;left: 0;top: 100px;}
+		/*首先关联input和label标签，保证点击label可以实现选中input的效果*/
+		.xuanxiangka li input:checked + label{background-color: orange;}
+		/*关联input+lable+pic标签，实现，点击input或者label可以选中pic的效果，具体内容的切换，靠的是input中的id属性值与lable对应来实现的*/
+		.xuanxiangka li input:checked + label + .pic{display: block;}
+	</style>
+</head>
+<body>
+<!-- 设置大盒子，整个选项都放在大盒子里面 -->
+	<ul class="xuanxiangka cl">
+	<!-- 每一个选项都用li标签表示，正常表示它的位置 -->
+		<li>
+		<!-- 选项卡中具体的内容放在pic标签中，然后定位（想对于大盒子ul来说定位置比较好，应为每一个li的位置都不一样，如果图片很大偶的时候，排版就是个问题，所以相对于大盒子定位最好）到具体的位置（首先设置display：none；看不到） -->
+			<input type="radio" name="s" id="a1" checked>
+			<label for="a1">首页</label>
+			<div class="pic">打开的健康</div>
+		</li>
+		<li>
+			<input type="radio" name="s" id="a2">
+			<label for="a2">首页</label>
+			<div class="pic">slksk</div>
+		</li>
+		<li>
+			<input type="radio" name="s" id="a3">
+			<label for="a3">首页</label>
+			<div class="pic">打ddsd康</div>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animate库的使用</title>
+	<!-- 此处也可以直接引用下载的css文件样式，不过此文件比较大，对网页的优化不太友好，加载可能比较慢 -->
+	<!-- <link rel="stylesheet" href="../css/animate.css"> -->
+	<style type="text/css">
+		.box{width: 500px;
+			height: 200px;
+			background-color: #f0f;
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:center;justify-content:center;
+			-webkit-align-items:center;align-items:center;
+		}
+		.p{/*width: 100%;*/line-height: 50px;background-color: #ff0;padding:0 20px;}
+		/*在下载的css文件中搜索需要的animated标签，并且复制到本地css样式中*/
+		.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@media (prefers-reduced-motion) {
+  .animated {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+/*此处将需要的样式内容，（所有的slideInDown相关内容）完全的复制到本项目css样式文件中，*/
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="p animated slideInDown ">你好</div>
+	</div>
+</body>
+</html>

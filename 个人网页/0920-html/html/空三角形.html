@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+// 上面的
+	var i = 1;
+	while(i<=9){
+		// 此处为左边空格，占位用
+		var j = 1;
+		while(j<=10-i){
+			document.write("　");
+			j++;
+		}
+
+		// 此处为右边的
+		var k = 1;
+		while(k<=2*i-1){
+			// 在第一列和最后一列留字，其他列空起来
+			if(k==1||k==2*i-1){
+				document.write("锋")
+			}else{
+				document.write("　");
+			}
+			
+			k++;
+		}
+		document.write("<br/>");
+		i++;
+	}
+
+	// 写下面的
+	var h = 1; 
+	while(h<=9){
+		// 左边
+		var h1 = 1;
+		while(h1<=h){
+			document.write("　");
+			h1++;
+		}
+		// 右边
+		var h2 = 1;
+		while(h2<=2*(10-h)-1){
+			// 此处嵌套一个只是为了判断，最后一个要有字，其他的都为空格站位
+			// h2==1||h2==2*(10-h)-1为第一个和最后一个字的位置
+			if(h2==1||h2==2*(10-h)-1){
+				document.write("锋");
+			}else{
+				document.write("　");
+			}
+			
+			h2++;
+		}
+		document.write("<br/>");
+		h++;
+	}
+
+</script>
+</html>

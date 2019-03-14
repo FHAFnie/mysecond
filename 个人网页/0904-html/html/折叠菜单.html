@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折叠菜单</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.box{width: 130px;line-height: 38px;/*background-color: #ff0;*/margin:auto;text-align: center;}
+		.box input{display:none;}
+		.box label{display:inline-block;width: 130px;line-height: 40px;background-color: #aaa;}
+		.box ul{width: 130px;/*background-color: #0ff;*/height: 0;transition:1s;overflow:hidden;}
+		.box ul li{width: 130px;border:1px solid yellow;border-radius: 20px;background-color: #0ff;}
+
+
+
+		.box input:checked + label{background-color: red;}
+		.box input:checked + label +ul{height:160px;}
+
+
+
+	</style>
+
+
+
+</head>
+<body>
+	<div class="box">
+		<input type="checkbox" id="a" name="s">
+		<label for="a">211231</label>
+		<ul>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+		</ul>
+		<input type="radio" id="b" name="s">
+		<label for="b">211231</label>
+		<ul>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+		</ul>
+		<input type="radio" id="c" name="s">
+		<label for="c">211231</label>
+		<ul>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+		</ul>
+		<input type="checkbox" id="d" name="s">
+		<label for="d">211231</label>
+		<ul>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li>111</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+*{padding: 0;margin: 0;}
+li{list-style:none;}
+.a{width: 1000px;height: 250px;background-color: #e5e5e5;}
+.a .a1{width: 473px;height: 250px;background-color: #e5e5e5;float: left;}
+.a1 h3{width: 440px;height: 40px;font-size:16px;font-color:#5d5d5d;background-color: #e5e5e5;line-height:40px;margin-top: 19px;padding-left:13px;margin-left: 20px;border-bottom:1px solid #c1c1c1;}
+.a .a2{width: 200px;height: 250px;background-color: #e5e5e5;float: left;}
+.a .a3{width: 327px;height: 250px;background-color: #e5e5e5;float: left;}

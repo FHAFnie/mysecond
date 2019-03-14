@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var num = 13305456;//需要将数字类型转化为字符串类型，才能将里面的每一个数字取出来，操作
+	var newStr = "";
+	var list=["零","一","二","三","四","五","六","七","八","九"];//顺序很重要
+	var unitList=["元","十","百","千","万","十万","百万","千万","亿","十亿","百亿","千亿"];//顺序很重要
+
+	for(var i=0,num=num+"";i<num.length;i++){
+		var char = num.charAt(i);
+		// alert(char);
+		// newStr +=list[char];此处较为巧妙，主要原因是取出来的数字正好对应list中对应中文的下标
+		newStr+=list[char]+unitList[num.length-1-i];
+	}
+	alert(newStr);
+</script>
+</html>

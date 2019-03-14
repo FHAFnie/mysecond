@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 400px;
+            height: 430px;
+            margin: 50px auto;
+        }
+
+        #box ul {
+            height: 30px;
+            width: 400px;
+        }
+
+        #box ul li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #1c0503;
+            color: #f0e3ee;
+        }
+
+        #box img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li onclick="show('yangmi1.jpg')">一</li>
+        <li onclick="show('yangmi2.jpg')">二</li>
+        <li onclick="show('yangmi3.jpg')">三</li>
+        <li onclick="show('yangmi4.jpg')">四</li>
+    </ul>
+    <img src="images/yangmi1.jpg" alt="" id="img">
+</div>
+</body>
+<script>
+    var img = document.getElementById("img");
+    function show(imgName) {
+        //alert(imgName);
+        img.src = "images/" + imgName;
+    }
+
+</script>
+</html>

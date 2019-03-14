@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>体重表</title>
+	<style type="text/css">
+		table{width:400px; height:320px; border:1px solid #eee;border-collapse: collapse;text-align: left;}
+		td{border:1px solid #eee;}
+		.td1{width: 100px;}
+		input{border:0;margin:20px 0 20px 10px;line-height: 30px;text-align: left;}
+		input:focus{outline:none;}
+		.js{text-align: center;padding:20px 0;}
+		#btn{line-height: 25px;background-color:orange;}
+
+	</style>
+</head>
+<body>
+	<table  cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="td1">体重</td>
+			<td>
+				<input type="text" id="kg">公斤(kg)
+			</td>
+		</tr>
+		<tr class="td1">
+			<td>身高</td>
+			<td>
+				<input type="text" id="sg">身高(cm)
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="js">
+				<button id="btn">进行计算</button>
+			</td>
+		<!-- 	<td></td> -->
+		
+		</tr>
+		<tr class="td1">
+			<td>健康值</td>
+			<td>
+				<input type="text" id="BMI">
+			</td>
+		</tr>
+		<tr>
+			<td class="td1">系统评价</td>
+			<td>
+				<input type="text" id="pj">
+			</td>
+		</tr>
+	</table>
+</body>
+<script>
+	var btn = document.getElementById("btn");
+
+	btn.onclick = function(){
+		var kgInput = document.getElementById("kg");
+		var kg = kgInput.value;
+
+		var sgInput = document.getElementById("sg");
+		var sg = sgInput.value;
+		// alert(kg+sg);
+
+		// 计算
+		
+		var result1 = Math.pow(sg/100,2)
+		var result = Math.floor((kg/Math.pow((sg/100),2))*100)/100
+		// alert(result);
+		
+		// 给input表格进行赋值
+		var bmiInput = document.getElementById("BMI");
+		bmiInput.value = result;
+
+     
+		// 判断
+
+		if(result<18.5){
+			var result2 = "轻体重，太瘦拉";
+		}else if(result>=18.5&&result<24){
+			var result2 = "健康体重，继续保持";
+		}else if(result>=24&&result<28){
+			var result2 = "超重，有点超标";
+		}else{
+			var result2 = "肥胖,该减肥了";
+		}
+		// 先将input的对象取出来，然后给其赋值
+		var pjInput = document.getElementById("pj");
+		pjInput.value = result2;
+	}
+
+</script>
+</html>

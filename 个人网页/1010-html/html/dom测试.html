@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom测试</title>
+</head>
+<body>
+	<ul>
+		<li id="first">1</li>
+		<li class="middle">2</li>
+		<li class="middle">3</li>
+		<li>4</li>
+		<li class="last">5</li>
+	</ul>
+	<ul>
+		
+	</ul>
+	<input type="radio" name="hobby">篮球
+	<input type="radio" name="hobby">水煎
+</body>
+<script>
+	var ulList=document.getElementsByTagName("ul");
+	console.log(ulList);//[ul, ul]
+
+	var firstUl=ulList[0];
+	console.log(firstUl);
+
+	var firstLi =document.getElementById("first");
+	firstLi.innerHTML = "我是第一个";
+
+	var middleList=document.getElementsByClassName("middle");
+	console.log(middleList);//[li.middle, li.middle]
+
+	var secondLi=middleList[0];
+	secondLi.style.color="red";
+
+	var radioList = document.getElementsByName("hobby");
+	console.log(radioList,typeof radioList);//[input, input] "object"
+
+	var firstName = radioList[0];
+	// firstName.innerHTML = "篮球";
+	// radioList[0].innerHTML = "篮球";
+	console.log(firstName);
+
+
+</script>
+</html>

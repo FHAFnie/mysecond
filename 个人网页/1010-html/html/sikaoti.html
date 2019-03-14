@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<button id="btn">转移</button>
+	<ul>
+		
+	</ul>
+</body>
+<script>
+	var btn=document.getElementById("btn");
+	var ulList=document.getElementsByTagName("ul");
+	var ul1= ulList[0];
+	console.log(ul1);
+	var ul2=ulList[1];
+	
+
+
+
+
+
+
+	var ul1LiList=ul1.getElementsByTagName("li");
+	console.log(ul1LiList);
+		// var liItem = ul1LiList[0];
+		// liItem.onclick=function(){
+		// 	ul2.appendChild(liItem);
+		// }
+
+
+
+	btn.onclick=function(){
+		var liItem = ul1LiList[0];
+		var firstLi = document.createElement("li");
+		firstLi.innerHTML = "你好";
+		ul2.appendChild(liItem);
+		ul2.insertBefore(liItem,firstLi);
+		ul2.replaceChild(liItem,firstLi);
+		ul2.removeChild(liItem);
+	}
+
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table居中</title>
+	<style type="text/css">
+		
+
+		/*用table居中不能用float，否则会失效*/
+
+
+		
+		/*小盒子居中，左右居中用margin:auto;实现*/
+		.box{display:table;width: 300px;height: 300px;background-color: yellow;margin-top: 100px;}
+		.box .box1{display:table-cell;vertical-align: middle;/*text-align: center;*/}
+		.a{width: 50px;height: 50px;margin:auto;background-color: red;}
+
+		/*图片和文字居中，主要要考虑左右居中需要用到text-align:center;*/
+		.b{display:table;width: 300px;height: 300px;background-color: yellow;margin-top: 100px;}
+		.b .b1{display:table-cell;vertical-align: middle;text-align: center;}
+		.b .b1 img{width: 50px;}
+	</style>
+</head>
+<body>
+	<!-- 居中元素是大框 -->
+	<div class="box">
+		<div class="box1">
+			<div class="a"></div>
+		</div>
+	</div>
+	<!-- 居中元素是行内标签（文字或者图片） -->
+	<div class="b">
+		<div class="b1">
+			<img src="../images/1.png" alt="">
+		</div>
+	</div>
+</body>
+</html>

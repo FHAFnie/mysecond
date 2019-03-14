@@ -1,0 +1,10 @@
+*{padding:0;margin: 0;}
+li{list-style:none;}
+.a{width:1000px;height: 100px;background-color: green;}
+.a1{width: 243px;height: 22px;background-color: orange;float: left;}
+.a2{width: 228px;height: 28px;background-color: orange;float: right;}
+.b{width: 1000px;height: 59px;background-color: black;}
+.b1{width: 146px;height: 59px;background-color: yellow;float: left;}
+.b2{width: 120px;height: 59px;background-color: orange;float: left;}
+.b3{width: 134px;height: 59px;background-color: orange;float: left;}
+.c{width: 1000px;height: 463px;background-color: green;}

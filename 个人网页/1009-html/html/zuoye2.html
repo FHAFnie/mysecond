@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告吸顶操作</title>
+	<style>
+		html,body{
+			height: 3000px;
+		}
+		.nav{
+			width: 100%;
+			height: 80px;
+			background-color: #f0f;
+			text-align: center;
+			line-height: 80px;
+		}
+		.addNoPosition{
+			width: 100%;
+			height: 50px;
+			background-color: #ff0;
+			text-align: center;
+			line-height: 50px;
+			
+			/*left:;*/
+		}
+		.addPosition{
+			width: 100%;
+			height: 50px;
+			background-color: #ff0;
+			text-align: center;
+			line-height: 50px;
+			position:fixed;
+			left:0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">导航栏</div>
+	<div class="addNoPosition" id="add">广告</div>
+
+</body>
+<script>
+	var navDiv = document.getElementsByClassName("nav");
+	var addDiv = document.getElementById("add");
+	var maxHeight = 80;
+	
+
+	window.onscroll=function(){
+		
+		var scrolltop = document.documentElement.scrollTop||document.body.scrollTop;
+		// alert(scrolltop);
+		if(scrolltop>=maxHeight){
+			addDiv.className = "addPosition";
+		}else{
+			addDiv.className = "addNoPosition";
+		}
+	}
+</script>
+</html>

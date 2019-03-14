@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水仙花数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var result=0;
+	for(var i=1;i<=9;i++){
+		for(var j=0;j<=9;j++){
+			for(var k=0;k<=9;k++){
+
+				result =100*i+10*j+k;
+				var sum=i*i*i+j*j*j+k*k*k;
+				if(result==sum){
+					document.write(result+" ");
+				}
+
+
+			}
+		}
+	}
+</script>
+</html>

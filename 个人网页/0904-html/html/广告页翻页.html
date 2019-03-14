@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告页翻页效果</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		li{list-style: none;}
+		input:focus{outline:none;}
+		body{color:white;}
+		.box{width: 100%;margin-top: 50px;position:relative;}
+		.box1{width: 1000px;}
+		.box1 >div{position:absolute;z-index: 1;}
+		.box1 >div img{width: 100%;}
+		.b{width: 100%;height: 50px;background-color:rgba(143,142,136,.7);position:absolute;top: 430px;left: 0;}
+		.b .b1{width: 108px;margin:auto;background-color: red;line-height: 50px;}
+		.b .b1 input{display:none;}
+		.b1 label{width: 10px;height: 10px;border-radius: 50%;border:1px solid yellow;display:inline-block;margin-left: 5px;}
+
+		.b .b1 input:checked + label + .a2{z-index: 3;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">
+			<div class="a">
+				<a href=""><img src="../images/5.jpg" alt="加载失败"></a>
+			</div>
+			<div class="a1">
+				<a href=""><img src="../images/6.jpg" alt="加载失败"></a>
+			</div>
+			<div class="a2">
+				<a href=""><img src="../images/7.jpg" alt="加载失败"></a>
+			</div>
+			<div class="a3">
+				<a href=""><img src="../images/8.jpg" alt="加载失败"></a>
+			</div>
+			<div class="a4">
+				<a href=""><img src="../images/9.jpg" alt="加载失败"></a>
+			</div>
+			<div class="a5">
+				<a href=""><img src="../images/10.jpg" alt="加载失败"></a>
+			</div>
+			<div class="b">
+				<div class="b1">
+					<input type="checked" id="c" name="s">
+					<label for="c"></label>
+					<input type="checked" id="d" name="s">
+					<label for="d"></label>
+					<input type="checked" id="e" name="s">
+					<label for="e"></label>
+					<input type="checked" id="f" name="s">
+					<label for="f"></label>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <script src="../../js/common.js"></script>
+</head>
+<body>
+	<input id="username" type="text" placeholder="不能用数字开头只能数字字母$还有_组成">
+    <button id="btn">判断</button>
+
+    <input id="money" type="text" placeholder="输入金额">
+    <button id="btn1">转换</button>
+<!-- 
+    <input id="dxx" type="text" placeholder="不分大小写">
+    <button id="btn2">将大小写转换</button> -->
+
+
+</body>
+<script>
+
+
+
+btn.onclick =function(){
+    var usernameInp = document.getElementById("username");
+    var btn = document.getElementById("btn");
+
+    var username = usernameInp.value;
+
+    alert(pdyhm(username));
+}
+
+btn1.onclick =function(){
+    var moneyInp = document.getElementById("money");
+    var btn1 = document.getElementById("btn1");
+
+    var money = moneyInp.value;
+
+    alert(nzh(money));
+}
+
+// btn2.onclick =function(){
+//     var dxxInp = document.getElementById("dxx");
+//     var btn2 = document.getElementById("btn2");
+
+//     var dxx = dxxInp.value;
+
+//     if(sfdx(money)){
+//         alert("不能有大写字母");
+//     }else{
+//         alert("字符串合法")
+//     };
+// }
+
+
+
+	 // var str = "123";
+	
+    //转成一二三
+    //转一百二十三元
+    
+    //  var list1 = [];
+   //  var list2=[];
+   //  for(var i=0;i<=9;i++){
+   //   list1.push(i);
+   //  }
+   //  // alert(list1);
+
+   //  var html="";
+   //  for(var j=0;j<str.length;j++){
+   //   var con = str.charAt(j);
+   //   var index = indexOf(con,list1);
+   //      // alert(index);
+   //      list2.push(list[index]);
+   //      html +=list[index];
+   //  }
+   //  // document.write(list2+"<br/>");
+
+   // document.write(html+"<br/>");
+
+
+   //  var str2 =["元","十","百","千","万","十万","百万","千万","亿","十亿","百亿","千亿","万亿"];
+
+
+   //  var html1="";
+   //  for(var j=0;j<str.length;j++){
+   //      html1+=list2[j]+str2[list2.length-1-j];
+   //  }
+   //  document.write(html1);
+
+
+
+
+
+
+// function nzh(str){
+//      var list = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+//      var list1 = [];
+//      var list2=[];
+//     for(var i=0;i<=9;i++){
+//         list1.push(i);
+//     }
+//         // alert(list1);
+
+//     var html="";
+//     for(var j=0;j<str.length;j++){
+//          var con = str.charAt(j);
+//          var index = indexOf(con,list1);
+//          // alert(index);
+//          list2.push(list[index]);
+//          html +=list[index];
+//     }
+//         // document.write(list2+"<br/>");
+
+//     document.write(html+"<br/>");
+
+//     var str2 =["元","十","百","千","万","十万","百万","千万","亿","十亿","百亿","千亿","万亿"];
+
+//     var html1="";
+//     for(var j=0;j<str.length;j++){
+//         html1+=list2[j]+str2[list2.length-1-j];
+//     }
+//     // document.write(html1);
+//     return html1;
+// }
+
+
+// 数字转汉字带单位（银行常见）
+// alert(nzh("12783445"));
+
+// 函数所有的大小写字母加上数字还有美元下划线符号
+// alert(bigCodeSuoYou());
+
+
+// 判断字符串是否合法
+// alert(pdyhm("sfdjskkja/"));
+
+
+
+
+
+</script>
+</html>

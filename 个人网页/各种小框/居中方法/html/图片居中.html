@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片居中方法（即inline-block类型元素都可以）</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+
+		/*此处在父元素上添加行高，可以再利用三个属性解决上下居中问题，而左右居中直接用text-align: center;可以解决*/
+		.box{width: 500px;height: 500px;background-color: #ff0;margin:auto;margin-bottom:100px;text-align: center;line-height: 500px;font-size:0;}
+		.box img{width: 200px;/*height: 200px;*/vertical-align: middle;}
+		/*此处是利用另外一个行内块级元素充当行高的作用，来实现上下居中*/
+		.box1{width: 500px;height: 500px;background-color: #ff0;margin:auto;margin-bottom:100px;text-align: center;/*line-height: 500px;*/font-size:0;}
+		.a,img{vertical-align: middle;}
+		.a{display: inline-block;width: 0;height: 100%;background-color: #f0f;}
+		
+
+	</style>
+</head>
+<body>
+	<!-- 常用图片居中方法 -->
+	<div class="box">
+		<img src="../images/1.png" alt="">
+	</div>
+
+	<!-- 找一个盒子转化为inline-block(与图片属性一样)，行使行高的作用 -->
+	<div class="box1">
+		<div class="a"></div>
+		<img src="../images/1.png" alt="">
+	</div>
+</body>
+</html>

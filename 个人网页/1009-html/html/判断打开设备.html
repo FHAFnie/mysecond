@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var appKeyList = ["iPhone","iPad","Android","BB10","Windows Phone","Nexus"];
+	var str = window.navigator.userAgent;
+	// alert(str);
+	
+	var flag=false;
+	for(var i=0;i<appKeyList.length;i++){
+		var item=appKeyList[i];
+		// alert(item);
+		if(str.indexOf(item)!=-1){
+			flag=true;
+			break;
+		}
+	}
+	if(flag){
+		alert("移动端");
+	}else{
+		alert("PC端")
+	}
+
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=deviec-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>响应式布局</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.a{overflow:hidden;}
+		.a li{float: left;background-color: #ff0;/*height: 300px;*/}
+		.a li img{width: 100%;vertical-align: top;}
+		.a li p{line-height: 50px;font-size: 20px;color:#999;text-align: center;width: 100%;}
+
+
+		@media screen and (min-width:320px) and (max-width:767px){
+			body{background-color: #f00;}
+			.a li{width: 46%;margin:10px 2%;}
+			
+
+		}
+		@media screen and (min-width:768px) and (max-width:1200px){
+			body{background-color: #f0f;}
+			.a li{width: 29.3333%;margin:10px 2%;}
+
+		}
+		@media screen and (min-width:1201px){
+			body{background-color: #f0f;}
+			.a{width: 1200px;margin:auto;}
+			.a li{width: 21%;margin:10px 2%;}
+		}
+	</style>
+</head>
+<body>
+	<ul class="a">
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+		<li>
+			<img src="../images/1.png" alt="">
+			<p>你好</p>
+		</li>
+	</ul>
+</body>
+</html>

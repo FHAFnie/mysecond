@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告页内容动画出现效果</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+		html,body{height: 100%;}
+		html{
+			font-size: -webkit-calc(100vw/10.8);
+			font-size: calc(100vw/10.8);
+		}
+		body{font-size: .36rem;
+			
+
+		}
+		.box{width: 100%;position:relative;}
+		.a{width: 50%;height: 5rem;float: left;position:absolute;}
+		.a1{background-color: #ff0;animation:go1 1s;forwards;}
+		.a2{background-color: #f00;animation:go2 1s;forwards;left: 50%;}
+		@keyframes go1{
+			from{left: 0;top: -500px;
+
+			}
+			to{
+				left: 0;top:0;
+			}
+		}
+		@keyframes go2{
+			from{left: 50%;top: 5rem;
+
+			}
+			to{
+				left: 50%;top:0;
+			}
+		}
+	</style>
+
+</head>
+<body>
+	<div class="box cl">
+		<div class="a a1"></div>
+		<div class="a a2"></div>
+	</div>
+</body>
+</html>

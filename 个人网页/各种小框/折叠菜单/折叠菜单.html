@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>折叠菜单</title>
+	<style type="text/css">
+		body,p,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+		li{list-style: none;}
+		.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+		a{text-decoration: none;/*color:#fff;*/}
+		img{vertical-align: top;}
+		input:focus,textarea:focus{outline: none;}
+		textarea{resize:none;}
+
+			html{
+			font-size: -webkit-calc(100vw/10.8);
+			font-size: calc(100vw/10.8);
+		}
+		body{font-size: .36rem;}
+		/*阿里图标的引用*/
+		.iconfont{color:#4a4d4a;font-size: .56rem;}
+
+		.zhengti{width: 3rem;background-color: #eee;}
+		.first{width: 3rem;/*line-height: .6rem;*/background-color: #f0f;margin: .2rem;/*padding: .3rem;*/}
+		.first input{display: none;}
+		.first label{display: block;margin: 0 .2rem;text-align: center;}
+		/*此处不能写定位，否则效果下面跟着一起下移的效果不能实现。只需要把位置写出来即可*/
+		.first ul{height: 0;left: 0;top: .8rem;transition:1s;overflow:hidden;background-color: #fff;}
+		.first ul li{text-align: center;background-color: #eee;line-height: .6rem;margin: .1rem .2rem;}
+		.first input:checked + label{background-color: red;}
+		.first input:checked + label + ul{height: 2rem;}
+	</style>
+</head> 
+<body>
+	<ul class="zhengti">
+		<li class="first">
+				<input type="checkbox"  id="a1">
+				<label for="a1">最高记录</label>
+				<ul>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+				</ul>
+		</li>
+		<li class="first">
+				<input type="checkbox"  id="a2">
+				<label for="a2">最低记录</label>
+				<ul>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+				</ul>
+		</li>
+		<li class="first">
+				<input type="checkbox"  id="a3">
+				<label for="a3">11111</label>
+				<ul>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+				</ul>
+		</li>
+		<li class="first">
+				<input type="checkbox"  id="a4">
+				<label for="a4">2222</label>
+				<ul>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+					<li><a href="">100</a></li>
+				</ul>
+		</li>
+	</ul>
+	
+
+
+
+</body>
+</html>

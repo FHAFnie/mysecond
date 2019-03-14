@@ -1,0 +1,63 @@
+@charset "utf-8";
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,select,textarea{padding: 0;margin: 0;}
+li{list-style: none;}
+.cl:after{content: "";display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+a{text-decoration: none;color:#a3a3a3;font-size: 15px;}
+img{vertical-align: top;}
+input:focus,textarea:focus:{outline: none;}
+textarea{resize:none;}
+body{background-color: #fff;}
+
+/*头部*/
+header{width: 100%;background-color: #fff;position:fixed;top: 0;}
+header li{text-align: center;float: left;text-align: center;line-height: 50px;}
+/*广告页*/
+.banner_bg{width: 100%;background-color: #33b9ff;margin-top: 51px;}
+.banner{margin:auto;text-align: center;color:#fff;overflow:hidden;}
+.banner h3{width: 100%;line-height: 139px;font-size: 45px;margin-top: 83px;}
+.banner p{width: 100%;line-height: 20px;font-size: 20px;margin-bottom: 72px;}
+.banner img{width: 65%;margin-bottom: 87px;}
+
+.shuju{width: 100%;background-color: #fff;text-align: center;margin: auto;padding-top: 57px;}
+.shuju li{float: left;margin-bottom: 50px;}
+.shuju h3{/*width: 50%;*/line-height: 129px;color:#666;font-size: 43px;display: inline-block;}
+
+
+.bg2{background-color: #f3f7fa;}
+.bg2 h3{margin-top: 52px;color:#333;}
+.banner p{margin-bottom: 91px;color:#333;}
+
+
+
+.s2{background-color: #fff;}
+.s2 h3{margin-top: 15px;color:#333;}
+.banner p{margin-bottom: 88px;color:#333;}
+.s2 .banner .s2_tb{}
+.s2 .banner .s2_tb_list{width: 65%;line-height: 108px;font-size: 0;color:black;text-align: left;float: left;}
+.s2 .banner .s2_tb_list img{width: 50px;vertical-align: middle;}
+.s2 .banner .s2_tb_list span{font-size: 20px;}
+
+
+
+@media screen and (min-width:320px) and (max-width:767px){
+	header li{width: 20%;}
+	.shuju{width: 80%;}
+	.shuju li{width: 50%;}
+		
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+	header li{width: 20%;}
+	.shuju{width: 80%;}
+	.shuju li{width: 50%;}
+		
+}
+
+@media screen and (min-width:1201px){
+	.w1200{width: 1200px;}
+	
+	header ul{width: 70%;margin: auto;}
+	header li{width: 20%;}
+	.shuju li{width: 25%;}
+
+}
+

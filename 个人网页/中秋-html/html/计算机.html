@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js计算器</title>
+	<style>
+		body,h1,h2,h3,h4,h5,h6,p,input{
+			margin: 0;
+			padding: 0;
+		}
+		ul,dl,dd,li{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#000;
+		}
+		input{
+			border:0;
+		}
+		input:focus,textarea:focus{
+			outline: none;
+		}
+		.cl:after{content:"";display: block;clear:both;}
+		
+		#box{
+			width: 500px;
+			height: 500px;
+			margin: 200px auto;
+			/*border:1px solid red;*/
+			background:url(../images/yangmi1.jpg) no-repeat 0 0;
+			background-size: 100%;
+			position:relative;
+
+		}
+		#div1{
+			width: 250px;
+			position:absolute;
+			left: 50%;
+			top: 50%;
+			transform:translate(-50%,-50%);
+		}
+		#box h1{
+			width: 250px;
+			line-height: 50px;
+			font-size: 25px;
+			text-align: center;
+			/*background-color: rgba(14,87,224,.8);*/
+			color:blue;
+
+			
+		}
+	
+		#xsq input{
+			width: 247px;
+			box-sizing:border-box;
+			border:1px solid orange;
+			border-radius: 5px;
+			padding:8px;
+			text-align: right;
+			margin:2px 0 4px;
+			font-size: 20px;
+		}
+		#sr{
+			width: 250px;
+		}
+		#sr input{
+			/*解决行内标签的bug*/
+			float: left;
+			width: 60px;
+			line-height: 30px;
+			border:1px solid red;
+			border-radius: 5px;
+			margin:0 1px 4px 1px;
+			color:#fff;
+			font-size: 20px;
+			background:url(../images/ico.png) no-repeat -303px center;
+			
+
+		}
+		#sr input:hover{
+			background-position: -243px center;
+		}
+
+
+	
+
+
+
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<div id="div1" class="cl">
+			<h1>简易计算器</h1>
+			<div id="xsq">
+				<input type="text" value="0" id="result"> 
+			</div>
+			<div id="sr" class="cl">
+				<input type="button" value="9" onclick="kick('9')">
+				<input type="button" value="8" onclick="kick('8')">
+				<input type="button" value="7" onclick="kick('7')">
+				<input type="button" value="+" onclick="kick('+')">
+				<input type="button" value="6" onclick="kick('6')">
+				<input type="button" value="5" onclick="kick('5')">
+				<input type="button" value="4" onclick="kick('4')">
+				<input type="button" value="-" onclick="kick('-')">
+				<input type="button" value="3" onclick="kick('3')">
+				<input type="button" value="2" onclick="kick('2')">
+				<input type="button" value="1" onclick="kick('1')">
+				<input type="button" value="*" onclick="kick('*')">
+				<input type="button" value="0" onclick="kick('0')">
+				<input type="button" value="C" onclick="kick('C')">
+				<input type="button" value="=" onclick="kick('=')">
+				<input type="button" value="/" onclick="kick('/')">
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+	<script>
+		var resultInp = document.getElementById("result");
+		var flag = false;
+		var num1 = 0;
+		// 表示没有运算符存在
+		var optFlag = false;
+
+		var opt = "";
+
+		function kick(content){
+			switch(content){
+				case "+":
+				case "-":
+				case "*":
+				case "/":
+					if(flag){
+						resultInp.value = calc(num1,resultInp.value,opt);
+						// 计算一次就将消除一次运算符
+						// 此处可以做连续操作
+						
+					}
+					// 表明已经输入了一个数和运算符了，只需要输入下一个数字就可以计算了
+					flag = true;
+					// 此时需要将第一个输入好的数交给num1
+					num1 = resultInp.value;
+					optFlag = true;
+					opt = content;
+					break;
+				case "=":
+
+					resultInp.value  = calc(num1,resultInp.value,opt);
+					flag = false;
+					break;
+
+				case "C":
+					resultInp.value ="0";
+					num1 = 0;
+					// flag = false;
+					optFlag = false;
+					opt = "";
+					break;
+
+				default:
+					if(optFlag){
+						// 此处在显示的时候看不出来，因为只有在输入第二个数的是，才会执行在此处，而此处将显示器上面数字清零，然后马上执行了下面的操作，将输入的数字赋给了显示器文本框，这个过程由计算机完成，所以看不出来过程
+						resultInp.value = 0;
+					}
+					optFlag = false;
+					resultInp.value = resultInp.value=="0"? content:resultInp.value+content;
+					break;
+			}
+		}
+
+
+		function calc(num1,num2,opt){
+			switch(opt){
+				case "+": 
+					return num1*1 + num2*1;
+				case "-": 
+					return num1 - num2;
+				case "*": 
+					return num1 * num2;
+				case "/": 
+					return num1 / num2;
+			}
+		}
+
+	</script>
+</html>

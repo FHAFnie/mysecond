@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+    // 插入排序
+    // 
+    // 从第二个数开始向前比较，将较小的数放在前面
+    var list = [76, 87, 99, 59, 66, 70, 90, 44, 2];
+    // 取数i=1开始，即第二个数开始
+    for (var i = 1; i < list.length; i++) {
+    // 先将取出的数放在current里面，存储
+        var current = list[i];
+    // 将它前面的数的下标表示出来
+        preIndex = i - 1;
+       // 判断条件，如果下标小于0，前面就没有数了，不需要比较并且，如果前面的数小于后面的数，也不需要换位置，即不需要进入循环
+        while (preIndex >= 0 && list[preIndex] > current) {
+        // 进入循环表明，后面的数比前面的数小，需要换一个位置
+            list[preIndex + 1] = list[preIndex];
+        // 换完顺序后，只是将和它相邻的数比较了，如果，前面还有数的话，还得继续比较，所以，再前面的一个数需要表示出来，即下标减1
+            preIndex--;
+        }
+        // 如果不进入循环，此处相当于把自己赋值给自己的操作
+        // 如果进入了循环，此时，由于将前后顺序调换了位置，会出现一个重复的数字，所以，还得将原来最初的数赋值给当前位置
+        // 或者，当前位置的值需要改变，不改变，则将自己赋值给自己，改变，则将大的数赋值给自己（按顺序向后移动）
+        list[preIndex + 1] = current;
+    }
+    console.log(list);
+
+
+</script>
+</html>

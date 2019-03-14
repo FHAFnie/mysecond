@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户名和密码合法性</title>
+	<script src="../../js/common.js"></script>
+</head>
+<body>
+	密码：<input type="text" id="userpwd"><br/>
+	确认: <input type="text" id="userpwd2"><span id="userTip">再输入一次密码</span><br/>
+	<button id="btn">注册</button>
+
+</body>
+<script>
+	var userpwdInp = document.getElementById("userpwd");
+	var userpwd2Inp =document.getElementById("userpwd2");
+	var userTipInp = document.getElementById("userTip");
+	var btn = document.getElementById("btn");
+	btn.onclick=function(){
+		var userpwd = userpwdInp.value;
+		var userpwd2 =userpwd2Inp.value;
+		if(userpwd.length==userpwd2.length){//密码长度是否一致
+			var flag = true;
+			for(var i =0;i<userpwd.length;i++){
+				var char = userpwd.charAt(i);
+				var char2 = userpwd2.charAt(i);
+
+				if(char!==char2){//判断是否相同同
+					flag = false;
+					break;
+				}
+			}
+			if(flag){//两次密码一致，还需要判断长度
+				var count=0;
+
+				// if(isNaN(char)){//判断是否为纯数字
+				// 	count++;
+				// 	i--;
+				// 	if(!sfxx(char)){
+
+				// 		if(sfdx(char)){
+				// 			if(!isNaN(char)){
+				// 				userTipInp.innerHTML = "密码正确";
+				// 				userTipInp.style.color ="green";
+				// 			}else{
+				// 				userTipInp.innerHTML = "必须包含数字";
+				// 				userTipInp.style.color ="red";
+				// 			}
+				// 			// userTipInp.innerHTML = "密码正确";
+				// 			// userTipInp.style.color ="green";
+				// 		}else{
+				// 			userTipInp.innerHTML = "必须包含小写字母";
+				// 			userTipInp.style.color ="red";
+				// 		}
+				// 	}else{
+				// 		userTipInp.innerHTML = "必须包含大写字母";
+				// 		userTipInp.style.color ="red";
+				// 	}
+				// }else{
+				// 	userTipInp.innerHTML = "不能使用纯数字做密码";
+				// 	userTipInp.style.color ="red";
+				// }
+				
+
+
+
+				// userTipInp.innerHTML = "密码正确";
+				// userTipInp.style.color ="green";
+			}else{
+				userTipInp.innerHTML = "两次密码不一致";
+				userTipInp.style.color ="red";
+			}
+
+				
+		}else{
+			userTipInp.innerHTML = "两次密码的长度不一致";
+			userTipInp.style.color ="red";
+		}
+			
+	}
+
+
+
+
+	
+</script>
+</html>

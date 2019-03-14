@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>进度条</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 20px;
+			/*background-color: #f00;*/
+			border:1px solid red;
+			margin:50px auto;
+		}
+		.boxer{
+			/*width: 0;*/
+			height: 20px;
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="boxer"></div><span id="showJindu"></span>
+	</div>
+</body>
+<script>
+
+	var showJindu = document.getElementById("showJindu");
+
+	var box = document.getElementsByClassName("box")[0];
+	var boxWidth = parseInt(getComputedStyle(box)["width"]);
+
+	var boxer = box.getElementsByClassName("boxer")[0];
+	boxer.style.width=0;
+	var owidth=parseInt(getComputedStyle(boxer)["width"]);
+	showJindu.innerHTML = parseInt((owidth/boxWidth)*100)+"%";
+	var timer = setInterval(function(){	
+		var owidth=parseInt(getComputedStyle(boxer)["width"]);
+		showJindu.innerHTML = parseInt((owidth/boxWidth)*100)+"%";
+		if(owidth>=boxWidth){
+			clearInterval(timer);
+		}else{
+			boxer.style.width=owidth+10+"px";
+		}
+	},100)
+
+	
+	
+</script>
+</html>

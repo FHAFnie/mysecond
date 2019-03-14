@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch年月日计算</title>
+</head>
+<body>
+	<input type="text" id="year">年
+	<input type="text" id="month">月
+	<input type="text" id="day">日
+	<button id="btn">计算</button>
+	<input type="text" id="result">
+</body>
+<script>
+	var btn = document.getElementById("btn");
+	var resultInp = document.getElementById("result");
+	btn.onclick = function(){
+		var yearInp = document.getElementById("year");
+		var year = yearInp.value*1;
+		resultInp.value ="";
+		
+		switch(true){
+			// 判断年份
+			case year>=1000&&year<=3000&&year%1==0:
+				console.log("year ok");
+				var monthInp = document.getElementById("month");
+				var month = monthInp.value*1;
+				var dayInp = document.getElementById("day");
+				var day = dayInp.value*1;
+				var feb =28;
+
+				
+				switch(true){
+					case year%400==0||(year%4==0&&year%100!=0):
+						feb = 29;
+						break;
+				}
+				// alert(feb);
+				// 判断月份
+				switch(month){
+					// 判断1，3，5，7，8，10，12月份和天数
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+						console.log("month ok");
+
+						switch(true){
+							case day>=1&&day<=31&&day%1==0:
+								console.log("day ok");
+								break;
+							default:
+								alert("日期不合法");
+								break;
+						}
+						break;
+
+						// 判断4，6，9，11月份和天数
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						console.log("month ok");
+						switch(true){
+							case day>=1&&day<=30&&day%1==0:
+
+								console.log("day ok");
+								break;
+							default:
+								alert("日期不合法");
+								break;
+						}
+						break;
+						// 判断2月月份和天数
+					case 2:
+						console.log("month ok");
+						
+						switch(true){
+							case day>=1&&day<=feb&&day%1==0:
+								console.log("day ok");
+								break;
+							default:
+								alert("日期不合法");
+								break;
+						}
+						break;
+				}
+				// 月日判断完
+				// 开始计算天数，是在总体合法范围内进行计算
+				var result = 0;
+				switch(month){
+					case 1:
+						result = day;
+						break;
+					case 2:
+						result = 31+ day;
+						break;
+					case 3:
+						result = feb+31+day;
+						break;
+					case 4:
+						result = feb+31+31+day;
+						break;
+					case 5:
+						result = feb+31+31+30+day;
+						break;
+					case 6:
+						result = feb+31+31+30+31+day;
+						break;
+					case 7:
+						result = feb+31+31+30+31+30+day;
+						break;
+					case 8:
+						result = feb+31+31+30+31+30+31+day;
+						break;
+					case 9:
+						result = feb+31+31+30+31+30+31+31+day;
+						break;
+					case 10:
+						result = feb+31+31+30+31+30+31+31+30+day;
+						break;
+					case 11:
+						result = feb+31+31+30+31+30+31+31+30+31+day;
+						break;
+					case 12:
+						result = feb+31+31+30+31+30+31+31+30+31+30+day;
+						break;
+				} 	
+				resultInp.value = result;
+				break;
+				
+			default:
+				alert("年份格式错误！")
+				break;
+		}
+		// 年月日份判断完成
+		// var monthInp = document.getElementById("month");
+	}
+	
+	
+
+</script>
+</html>

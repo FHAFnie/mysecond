@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断字符是否大写</title>
+	<script src="../../js/common.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+
+// 大写
+	var bigCodeList = [];
+	for(var i=65;i<(65+26);i++){
+		bigCodeList.push(String.fromCharCode(i));
+	}
+	// alert(bigCodeList);
+// 小写
+	var lowreCodeList = [];
+	for(var i=97;i<(97+26);i++){
+		lowreCodeList.push(String.fromCharCode(i));
+	}
+	// alert(lowreCodeList);
+// 数字
+ 	var numList = [];
+ 	for(var i=0;i<=9;i++){
+ 		numList.push(String(i));
+ 	}
+ 	// alert(numList);
+
+
+// 封装一个函数判断字符是否小写
+var str = "a";
+	function sfxx(str,lowreCodeList){
+			var flag = false;
+			for(var i=0;i<lowreCodeList.length;i++){
+				var item = lowreCodeList[i];
+				// console.log(item);
+				if(str ===item){
+					flag = true;
+					break;
+				}
+			}
+			return flag;
+	}
+// alert(sfxx("a",lowreCodeList));
+	
+
+// 封装一个函数判断字符是否大写
+var str = "a";
+	function sfxx(str,bigCodeList){
+			var flag = false;
+			for(var i=0;i<bigCodeList.length;i++){
+				var item = bigCodeList[i];
+				// console.log(item);
+				if(str ===item){
+					flag = true;
+					break;
+				}
+			}
+			return flag;
+	}
+// alert(sfxx("a",bigCodeList));
+
+// 小写改大写
+
+// var str="a";
+// alert(indexOf(str,lowreCodeList));
+
+
+
+// 数组转字符串
+
+
+// 小写改大写
+
+var str = "akdDAD";
+alert(xgd(str,lowreCodeList,bigCodeList));
+
+
+
+function xgd(str,lowreCodeList,bigCodeList){
+
+	var str1="";
+		for(var i=0;i<str.length;i++){
+
+			var con = str.charAt(i);
+			// alert(con);
+			if(sfxx(con,lowreCodeList)){
+
+				var index = indexOf(con,lowreCodeList);
+				// alert(index);
+				 str1 += bigCodeList[index];
+			}else{
+				str1 += con;
+			}
+		}
+		return str1;
+}
+
+
+
+
+
+	
+
+
+</script>
+</html>

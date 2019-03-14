@@ -1,0 +1,111 @@
+		.a{width:1000px;height:100px;background-color:red;color:#39f214;}
+			.a1{width:243px;height: 20px;background-color:yellow;color:;float:left;}
+			.a2{width:227px;height: 27px;background-color:blue;color:;float:right;}
+		.b{width:1000px;height:60px;background-color:#201d1d;color:#efdbdb;}
+			.b1{width:125px;height: 60px;background-color:white;color:;float:left;}
+			.b2{width:125px;height: 60px;background-color:#cced71;color:;float:left;}
+			.b3{width:125px;height: 60px;background-color:white;color:;float:left;}
+			.b4{width:125px;height: 60px;background-color:#cced71;color:;float:left;}
+			.b5{width:125px;height: 60px;background-color:white;color:;float:left;}
+			.b6{width:125px;height: 60px;background-color:#cced71;color:;float:left;}
+			.b7{width:125px;height: 60px;background-color:white;color:;float:left;}
+			.b8{width:125px;height: 60px;background-color:#cced71;color:;float:left;}
+		.c{width:1000px;height:463px;background-color:#393d48;color:#d6f81a;}	
+		.d{width:1000px;height:243px;background-color:#17ef5e;color:#1f3426;}
+			.d1{width: 500px;height: 243px;background-color:blue;color:;float:left;}
+				.d11{width: 500px;height: 60px;background-color:white;color:;}
+				.d12{width: 500px;height: 15px;background-color:red;color:;}
+					.d121{width: 255px;height: 15px;background-color:yellow;color:;float:left;}
+					.d122{width: 70px;height: 15px;background-color:black;color:;float:right;}
+				.d13{width: 500px;height: 15px;background-color:white;color:;}
+					.d131{width: 300px;height: 15px;background-color:green;color:;float:left;}
+					.d132{width: 70px;height: 15px;background-color:blue;color:;float:right;}
+				.d14{width: 500px;height: 15px;background-color:red;color:;}
+					.d141{width: 200px;height: 15px;background-color:yellow;color:;float:left;}
+					.d142{width: 70px;height: 15px;background-color:black;color:;float:right;}
+				.d15{width: 500px;height: 15px;background-color:white;color:;}
+					.d151{width: 220px;height: 15px;background-color:green;color:;float:left;}
+					.d152{width: 70px;height: 15px;background-color:blue;color:;float:right;}
+				.d16{width: 500px;height: 15px;background-color:red;color:;}
+					.d161{width: 200px;height: 15px;background-color:yellow;color:;float:left;}
+					.d162{width: 70px;height: 15px;background-color:black;color:;float:right;}
+				.d17{width: 500px;height: 15px;background:white;color:;}
+					.d171{width: 220px;height: 15px;background-color:green;color:;float:left;}
+					.d172{width: 70px;height: 15px;background-color:yellow;color:;float:right;}
+			.d2{width: 240px;height: 243px;background-color:red;color:;float:left;}
+				.d21{width: 240px;height: 60px;background-color:green;color:;}
+				.d22{width: 240px;height: 15px;background-color:yellow;color:;}
+				.d23{width: 240px;height: 15px;background-color:green;color:;}
+				.d24{width: 240px;height: 15px;background-color:yellow;color:;}
+				.d25{width: 240px;height: 15px;background-color:green;color:;}
+			.d3{width: 260px;height: 243px;background-color:blue;float:left;}
+				.d31{width: 260px;height: 60px;background-color:#aabbc3;color:;}
+				.d32{width: 260px;height: 15px;background-color:red;color:;}
+				.d33{width: 260px;height: 15px;background-color:#aabbc3;color:;}
+				.d34{width: 260px;height: 60px;background-color:yellow;color:;}
+					.d341{width: 70px;height: 60px;background-color:black;color:;float:left;}
+					.d342{width: 80px;height: 60px;background-color:black;color:;float:right;}
+		.e{width:1000px;height:68px;background-color:#aabbc3;color:#9b7b32;}
+		.f{width:1000px;height:241px;background-color:#b5c2d3;color:#e43264;}
+			.f1{width: 250px;height: 241px;background-color:red;color:;float:left;}
+				.f11{width: 250px;height: 135px;background-color:green;}
+				.f12{width: 250px;height: 15px;background-color:blue;}
+				.f13{width: 250px;height: 15px;background-color:green;}
+			.f2{width: 250px;height: 241px;background-color:yellow;color:;float:left;}
+				.f21{width: 250px;height: 135px;background-color:yellow;color:;}
+				.f22{width: 250px;height: 15px;background-color:black;color}
+				.f23{width: 250px;height: 15px;background-color:blue;color:;}
+			.f3{width: 250px;height: 241px;background-color:white;color:;float:left;}
+				.f31{width: 250px;height: 135px;background-color:green;color:;}
+				.f32{width: 250px;height: 15px;background-color:yellow;color:;}
+				.f33{width: 250px;height: 15px;background-color:green;color:;}
+			.f4{width: 250px;height: 241px;background-color:yellow;color:;float:left;}
+				.f41{width: 250px;height: 135px;background-color:black;color:;}
+				.f42{width: 250px;height: 15px;background-color:green;color}
+				.f43{width: 250px;height: 15px;background-color:black;color:;}
+		.g{width:1000px;height:250px;background-color:#e5e5e5;color:#262222;}
+			.g1{width:480px;height:250px;background-color:blue;color:green;float: left;}
+				.g11{width: 480px;height: 57px;background-color:white;color:;}
+				.g12{width: 480px;height: 15px;background-color:yellow;color:;}
+					.g121{width: 70px;height: 15px;background-color:black;color:;float:left;}
+					.g122{width: 100px;height: 15px;background-color:green;color:;float:left;}
+					.g123{width: 70px;height: 15px;background-color:black;color:;float:left;}
+				.g13{width: 480px;height: 15px;background-color:white;color:;}
+					.g131{width: 70px;height: 15px;background-color:green;color:;float:left;}
+					.g132{width: 110px;height: 15px;background-color:black;color:;float:left;}
+					.g133{width: 70px;height: 15px;background-color:green;color:;float:left;}
+				.g14{width: 480px;height: 15px;background-color:yellow;color:;}
+					.g141{width: 70px;height: 15px;background-color:black;color:;float:left;}
+					.g142{width: 100px;height: 15px;background-color:green;color:;float:left;}
+					.g143{width: 70px;height: 15px;background-color:black;color:;float:left;}
+				.g15{width: 480px;height: 15px;background-color:white;color:;}
+					.g151{width: 70px;height: 15px;background-color:green;color:;float:left;}
+					.g152{width: 80px;height: 15px;background-color:black;color:;float:left;}
+					.g153{width: 70px;height: 15px;background-color:green;color:;float:left;}
+				.g16{width: 480px;height: 15px;background-color:yellow;color:;}
+
+			.g2{width:250px;height:250px;background-color:green;color:green;float: left;}
+				.g21{width: 250px;height: 57px;background-color:#aabbc3;color:;}
+				.g22{width: 250px;height: 15px;background-color:white;color:;}
+				.g23{width: 250px;height: 15px;background-color:#aabbc3;color:;}
+				.g24{width: 250px;height: 15px;background-color:white;color:;}
+				.g25{width: 250px;height: 15px;background-color:#aabbc3;color:;}
+			.g3{width:270px;height:250px;background-color:blue;color:green;float: left;}
+				.g31{width: 270px;height: 57px;background-color:black;}
+				.g32{width: 270px;height: 15px;background-color:yellow;}
+		.j{width:1000px;height:81px;background-color:#262222;color:#ccf355;}
+			.j1{width: 250px;height: 15px;background-color:white;color:;float: left;}
+				.j11{width: 50px;height: 15px;background-color:yellow;color:;float:left;}
+				.j12{width: 50px;height: 15px;background-color:green;color:;float:left;}
+				.j13{width: 50px;height: 15px;background-color:yellow;color:;float:left;}
+				.j14{width: 50px;height: 15px;background-color:green;color:;float:left;}
+			.j2{width: 595px;height: 15px;background-color:red;color:;float: right;}
+				.j21{width: 300px;height: 15px;background-color:yellow;color:;float:left;}
+				.j22{width: 200px;height: 15px;background-color:green;color:;float:right;}
+					.j221{width: 30px;height: 15px;background-color:yellow;color:;float:left;}
+					.j222{width: 25px;height: 15px;background-color:green;color:;float:left;}
+					.j223{width: 25px;height: 15px;background-color:yellow;color:;float:left;}
+					.j224{width: 25px;height: 15px;background-color:green;color:;float:left;}
+					.j225{width: 25px;height: 15px;background-color:yellow;color:;float:left;}
+					.j226{width: 25px;height: 15px;background-color:#d4cfba;color:;float:left;}
+

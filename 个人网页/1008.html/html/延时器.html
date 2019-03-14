@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延时器</title>
+	<style>
+		#box{
+			width: 300px;
+			height: 300px;
+			background-color: #f0f;
+			position:absolute;
+			right: 0;
+			bottom: 0;
+		}
+		#box div{
+			width: 300px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #ff0;
+			color:red;
+		}
+		#showTime{
+			float: left;
+		}
+		#close{
+			float: right;
+			width: 50px;
+			text-align: center;
+			/*margin-right: 20px;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div>
+			<span id="showTime"></span><span id="close">X</span>
+		</div>
+	</div>
+</body>
+<script>
+	var box = document.getElementById("box");
+	var showTime = document.getElementById("showTime");
+	var close = document.getElementById("close");
+	var seconds = 3;
+	showTime.innerHTML = "距离关闭还有"+seconds+"s";
+
+	var timer1 = setInterval(endTime,1000);
+	function endTime(){
+		seconds--;
+		showTime.innerHTML = "距离关闭还有"+seconds+"s";
+		if(seconds==0){
+			clearInterval(timer1);
+			box.style.display="none";
+			seconds=3;
+			showTime.innerHTML = "距离关闭还有"+seconds+"s";
+			setTimeout(function(){
+				box.style.display="block";
+				showTime.innerHTML = "距离关闭还有"+seconds+"s";
+				setInterval(endTime,1000);
+			},3000);
+		}
+	}
+	// close.onclick=function(){
+	// 		clearInterval(timer1);
+	// 		box.style.display="block";
+	// 		seconds=3;
+	// 		showTime.innerHTML = "距离关闭还有"+seconds+"s";
+	// 		setTimeout(function(){
+	// 			box.style.display="block";
+	// 			showTime.innerHTML = "距离关闭还有"+seconds+"s";
+	// 			setInterval(endTime,1000);
+	// 		},3000);
+	// }
+
+
+
+</script>
+</html>

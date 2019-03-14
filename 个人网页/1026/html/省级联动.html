@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省级联动</title>
+</head>
+<body>
+<select id="province">
+    <option value="">请选择省份</option></select>
+<select id="city">
+    <option value="">请选择区</option></select>
+<select id="lowerCity">
+    <option value="">请选择县级市</option>
+</select>
+</body>
+<script>
+    var provinceSelect=document.getElementById("province");
+    var citySelect=document.getElementById("city");
+    var lowerCity=document.getElementById("lowerCity");
+
+    var req=new XMLHttpRequest();
+    req.open("get","http://api.yytianqi.com/citylist/id/2",true);
+    req.send();
+    req.onreadystatechange=function(){
+        if(req.readyState==4&&req.status==200){
+            var result=req.responseText;
+            var china=JSON.parse(result)["list"];
+//            console.log(china);
+            var html="<option value=''>请选择省份</>";
+//            var html="";
+            for(var i=0;i<china.length;i++){
+                var province=china[i];
+                var provinceName=province["name"];
+                var provinceId=province["city_id"];
+                html+="<option value='"+provinceId+"'>"+provinceName+"</option>";
+            }
+            provinceSelect.innerHTML=html;//添加省份
+
+            provinceSelect.onchange=function(){//选定身份后，在确定区或者下级市
+                var indexSelect=provinceSelect.selectedIndex;
+//                console.log(indexSelect);
+                var opt=provinceSelect.options[indexSelect];
+                var provinceSelectId=opt.value;
+//                console.log(opt,provinceSelectId,china);
+                var cityList=china.filter(function(item){
+                    return item["city_id"]==provinceSelectId;
+                })[0]["list"];
+//                console.log(cityList);
+                var html1="<option>请选择区</option>";
+//                var html1="";
+                for(var i=0;i<cityList.length;i++){
+                    var city=cityList[i];
+                    var cityName=city["name"];
+                    var cityId=city["city_id"];
+                    html1+="<option value='"+cityId+"'>"+cityName+"</option>";
+                }
+                citySelect.innerHTML=html1;//添加城市
+
+//                城市选定后，再来选择下面的县级市
+                citySelect.onchange=function(){//城市选定后，查看下面县市
+                    var indexSelect=citySelect.selectedIndex;
+                    var opt=citySelect.options[indexSelect];
+//
+                    var secCityList=cityList.filter(function(item){
+                        return item["city_id"]==opt.value;
+                    })[0];//筛选出对应城市的id
+
+                    var html2="<option>请选择县区</option>";
+                    if(secCityList["list"]){//判断选定的城市是否有下级县市
+                        var thirdAllList=secCityList["list"];
+//                        console.log(thirdAllList);
+                        for(var i=1;i<thirdAllList.length;i++){
+                            var thirdCity=thirdAllList[i];
+//                            console.log(thirdCity);
+                            var thirdCityName=thirdCity["name"];
+                            var thirdCityId=thirdCity["city_id"];
+                            html2+="<option value='"+thirdCityId+"'>"+thirdCityName+"</option>";
+                        }
+                        lowerCity.innerHTML=html2;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</html>

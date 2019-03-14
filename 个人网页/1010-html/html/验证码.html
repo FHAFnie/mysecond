@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证码</title>
+	<style>
+		#box{
+			width: 300px;
+			height: 400px;
+			margin:50px auto;
+			background-color: #ff0;
+			overflow: hidden;
+		}
+		.btn{
+			width: 150px;
+			line-height: 30px;
+			display: block;
+			margin:10px auto;
+			font-size: 19px;
+
+		}
+		.codeSpan{
+			/*width: 300px;
+			height: 350px;
+			background-color: #00f;*/
+			position:relative;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<button class="btn">点击获取验证码</button>
+		<div class="codeSpan"></div>
+	</div>
+</body>
+<script>
+	var btn = document.getElementsByClassName("btn")[0];
+	var codeSpan = document.getElementsByClassName("codeSpan")[0];
+	console.log(codeSpan);
+
+	codeSpan.style.width="300px";
+	codeSpan.style.height="350px";
+	codeSpan.style.backgroundColor="#00f";//设置盒子的宽高以及背景颜色
+
+	var boxWidth=parseInt(getComputedStyle(codeSpan)["width"]);//获取下面盒子的宽度
+	var boxHeight=parseInt(getComputedStyle(codeSpan)["height"]);//获取下面盒子的高度
+	// console.log(boxWidth,boxHeight);
+
+	var listStr="你阿三监考老师的讲课了就开始打架啊速度";
+	var codeList=listStr.split("");//将长字符串拆分成数组
+
+	for(var i=0;i<4;i++){//首先创建四个span,如果再点击后再创建会出现，叠加（点击多次后会叠加）
+		var span = document.createElement("span");
+		codeSpan.appendChild(span);//将生成的四个span，添加到显示框中
+	}
+
+	btn.onclick=function(){//点击效果
+	
+		var codeStr=codeGener(codeList,4);//点击后先，生成四个字的字符串验证码
+		btn.innerHTML=codeStr;//将验证码字符串赋值给btn显示
+
+		var spanList=codeSpan.getElementsByTagName("span");//获取显示框中的四个span数组
+		var leftNumList=positionGener(boxWidth);//随机生成距左边距离的数组，记录数字
+		var topNumList = positionGener(boxHeight);//随机生成距上边距离的数组，记录数字
+
+		for(var i=0;i<4;i++){//将四个字符放入到四个span中
+			spanList[i].innerHTML = codeStr[i];
+			spanList[i].style="position:absolute";//设置四个span的style样式（首先是绝对定位）
+			var leftNum = leftNumList[i];//取出左边距离数组中的对应数字，赋值给left
+			var topNum =topNumList[i];//取出上边距离数组中的对应数字，赋值给top
+			spanList[i].style.left=leftNum+"px";
+			spanList[i].style.top=topNum+"px";//最终效果，为实现定位
+		}
+
+//定位完成后，就是要实现span的点击效果，点击一个span，就记录其中的innerHTML
+		for(var i=0;i<4;i++){
+			var str="";//用来装span中的内容
+			spanList[i].onclick=function(){//给span绑定点击事件
+				str+=this.innerHTML;//点击一次span时，就将当前span的内容记录到str中
+				if(str.length==4){//当点击了四次后（str的长度也为4），就可以进行判断了，
+					if(str==codeStr){//如果，str与生成的验证码完全一样，则正确，后面自动点击一次按钮，目的是清除str和重置验证码
+						alert("验证码正确");
+						btn.onclick();
+					}else{
+						alert("验证码错误");//如果不一样， 则需要重新生成验证码，用户再次点击span，重新验证
+						btn.onclick();
+					}
+				}else if(str.length>4){//可以省略，不可能出现，因为前面到4的时候，就会进行判断，不管结果如何，都好刷新按钮，str的长度又重置为0，所有str长度不可能超过4
+					alert("输入验证码长度不正确");
+					btn.onclick();
+				}
+			}
+		}
+	}
+	function codeGener(list,len){//随机生成制定的验证码
+		var codeStr="";
+		for(var i=0;i<len;i++){
+			var index = Math.round(Math.random()*(list.length-1));
+			var item = list[index];
+			if(codeStr.indexOf(item)==-1){
+				codeStr+=item;
+			}else{
+				i--;
+			}
+		}
+		return codeStr;
+	}
+
+	function positionGener(len){//随机生成位置（4个）
+		var list=[];
+		for(var i=0;i<4;i++){
+			var num = Math.round(Math.random()*(len-50));
+			if(list.indexOf(num)==-1){
+				list.push(num);
+			}else{
+				i--;
+			}
+		}
+		return list;
+	}
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.cl:after{content:"";display:inline-block;clear:both;}
+		.box{width: 464px;background-color: #9cbc2b;border-radius: 4px;margin:100px auto;}
+		.box form{width: 424px;margin-left: 21px;}
+		form h3{line-height: 37px;margin-top: 15px;}
+		.form-group1{width: 414px;/*margin-left: 21px;*/margin-bottom: 3px;border:2px solid rgba(255,255,255,.8);background-color: rgba(255,255,255,.5);border-radius: 5px;line-height: 28px;padding:8px 0;padding-left:10px;}
+		.form-group1 label{width: 116px;/*padding:8px 0;*/float: left;line-height: 28px;/*margin-left: 10px;*/}
+		.form-group1 input{width: 213px;line-height: 28px;float: left;border:0;background-color: #fff;border-radius: 5px;padding-left:10px;}
+
+
+		.form-group1 textarea{width: 223px;height: 95px;resize:none;border:0;border-radius: 5px;text-indent: 10px;}
+	
+
+
+		.form-group3{width: 414px;margin-bottom: 3px;border:2px solid rgba(255,255,255,.8);background-color: rgba(255,255,255,.5);border-radius: 5px;line-height: 28px;padding:8px 0;padding-left:10px;}
+		.form-group3 input{display: none;}
+		.form-group3 label{width: 15px;height: 15px;border-radius: 50%;background-color:white;border:2px solid yellow;display: inline-block;margin:0 10px;}
+
+		.form-group3 input:checked +label{background-color: #9cbc2b;}
+
+
+		.d0{width: 424px;line-height: 70px;background-color: #9cbc2b;margin:auto;text-align: center;font-size: 0;}
+		.d{width: 130px;line-height: 37px;display:inline-block;vertical-align: middle;font-size: 15px;background-color: #374313;border-radius: 20px;color:#fff;}
+
+	</style>;
+</head>
+<body>
+	<div class="box">
+		<form>
+			<h3>Step1:Your detail</h3>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+		</form>
+		<form>
+			<h3>Step2:Your detail</h3>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<textarea name="" id="" placeholder="输入中文"></textarea>
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+		</form>
+		<form>
+			<h3>Step3:Your detail</h3>
+			<div class="form-group3 cl" >
+				<p>cardtype</p>
+				<input type="radio" name="a1" id="a" checked>
+				<label for="a"></label>
+				<span>VISA1</span>
+				<input type="radio" name="a1" id="b">
+				<label for="b"></label>
+				<span>VISA2</span>
+				<input type="radio" name="a1" id="c">
+				<label for="c"></label>
+				<span>VISA3</span>
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+			<div class="form-group1 cl" >
+				<label for="">name</label>
+				<input type="text" placeholder="First and last name">
+			</div>
+		</form>
+		<div class="d0">
+			<p class="d">BUY IT</p>
+		</div>
+		
+	</div>
+</body>
+</html>

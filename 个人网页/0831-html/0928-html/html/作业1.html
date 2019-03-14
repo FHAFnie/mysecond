@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../js/common.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = "aaabbbbcccddddaaaccc";
+	// 去重
+	var newStr = "";
+	for(var i=0;i<str.length;i++){
+		var item = str.charAt(i);
+		if(newStr.indexOf(item)==-1){
+			newStr+=item;
+		}
+	}
+	alert(newStr);
+	// 统计出现的个数,根据前面得到字符串的顺序来计数
+	// alert(str.length);
+	var list="";
+	for(var i=0;i<newStr.length;i++){
+		var item=newStr.charAt(i);
+		// alert(item);
+		var count=0;
+		for(var j=0 ;j<str.length;j++){
+			if(item==str.charAt(j)){
+				count++;
+			}
+		}
+		list+=item+count;
+	}
+	alert(list);
+
+	// 按顺序压缩统计
+	var str = "aaabbbbcccddddaaacccsaddsajkfgggjk";
+	var list="";
+	var index=0;
+	for(var i=0;i<str.length;i++){
+
+		var item1=str.charAt(i);//先要确定起始位置，由于有重复的，所以，下一次循环开始的位置应该是上一次结束的位置（因此，下一次开始的位置，应该与j有关）
+		// alert(item1);
+		var count=1
+		for(var j=i+1;j<str.length;j++){
+			var item2=str.charAt(j);
+			if(item1==item2){//首字母后面的字母是否相同，如果相同，count++，否则，跳出循环
+				count++;
+			}else{
+				break;//前后字母不同，跳出循环
+			}
+		}
+		i=j-1;//记录下次循环开始的位置
+		list+=item1+count;//将每一个字母和它的数量拼接起来
+	}
+	alert(list);
+</script>
+</html>

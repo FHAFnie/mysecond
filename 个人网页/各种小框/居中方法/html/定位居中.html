@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位居中（子元素为块状元素即block）</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		/*子元素为块状元素*/
+		/*定位子元素本身有宽高，不用考虑小盒子的宽高都可以居中*/
+		.box{width: 500px;height: 500px;background-color: red;margin:auto;position:relative;margin-bottom:100px;}
+		.box .a{width: 150px;height: 200px;background-color: #f0f;position:absolute;top: 0;bottom: 0;left: 0;right: 0;margin:auto;}
+
+		/*此方法为先左上角居中，然后在上下左右移动50%，达到居中目的*/
+		.box1{width: 500px;height: 500px;background-color: red;margin:auto;position:relative;margin-bottom:100px;}
+		.box1 .b{width: 200px;height: 100px;background-color: #f0f;position:absolute;left: 50%;top: 50%;transform:translate(-50%,-50%)}
+		/*可以将子元素转化为行内块级元素（图片形式）再居中*/
+		/*这种方法中，小盒子里面的文字，必须重新设置行高和字体大小，才能够正常显示*/
+		.box2{width: 500px;height: 500px;background-color: red;margin:auto;position:relative;margin-bottom:100px;text-align: center;line-height: 500px;font-size:0;}
+		.box2 .c{width: 200px;height: 200px;display: inline-block;vertical-align: middle;background-color: yellow;color:black;font-size: 12px;line-height: 200px;}
+	</style>
+</head>
+<body>
+<!-- 定位——上下左右均为0+margin:auto的方法 -->
+	<div class="box">
+		<div class="a"></div>
+	</div>
+
+<!-- 定位2——百分比+移动的方法 -->
+	<div class="box1">
+		<div class="b"></div>
+	</div>
+
+<!-- 转化为inline-block,在使用图片居中方法，有两种，这里只介绍常规一种 -->
+	<div class="box2">
+		<div class="c">给i是大家看看电视剧啊的伽是个</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中午作业</title>
+	<style>
+		table{
+			border:1px solid red;
+			text-align: center;
+		}
+		tr,td{
+			width: 200px;
+			/*height: 50px;*/
+			border:1px solid blue;
+		}
+		#userInp{
+			height: 20px;
+			line-height: 20px;
+			position: relative;
+
+		}
+		.result{
+			position: absolute;
+			left: 0;
+			top: 20px;
+			z-index: 999;
+		}
+		.result td{
+			border:1px solid red;
+		}
+    </style>
+</head>
+<body>
+	<input type="text" id="userInp">
+	<button id="btn">查找</button><br/>
+	<!-- <table id="result"></table>> -->
+
+</body>
+<script>
+	  var str = "https://www.baidu.com/s?wd=%E4%BD%A0%E5%A5%BD&rsv_spt=1&rsv_iqid=0x98582b4f000214f6&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=48021271_11_hao_pg&rsv_enter=1&rsv_sug3=7&rsv_sug2=0&inputT=944&rsv_sug4=2115";
+    var list = str.split("?");
+    var str2 = list[1];
+    var paraList = str2.split("&");
+
+
+    var keyList=[];
+    var valueList=[];
+  
+     // document.write("<table>");
+	    // document.write("<tr>");
+		   //  document.write("<td>"+"key"+"</td>");
+		   //  document.write("<td>"+"value"+"</td>");
+	    // document.write("</tr>");
+
+    	 for(var i=0;i<paraList.length;i++){
+	     	var item1=paraList[i];
+	     	var item2=item1.split("=");
+
+	     	// alert(item2.length);
+	     	// document.write("<tr>")
+		     	for(var j=0;j<item2.length-1;j++){
+		     		// document.write(+item2[1]);
+		     		// document.write("<td>"+item2[0]+"</td>");
+		     		// document.write("<td>"+item2[1]+"</td>");
+		     	}
+	     	// document.write("</tr>");
+	     	keyList.push(item2[0]);
+	     	valueList.push(item2[1]);
+	     }
+
+     // document.write("</table>");
+
+     // document.write("<table>");
+     // 	 document.write("<tr>");
+		   //  document.write("<td>"+"key"+"</td>");
+		   //  document.write("<td>"+"value"+"</td>");
+	    // document.write("</tr>");
+     // document.write("</table>"
+
+     // alert(keyList);
+     // alert(valueList);
+
+    var userInput = document.getElementById("userInp");
+    var btn = document.getElementById("btn");
+    var tableResult = document.getElementById("result");
+
+    btn.onclick=function(){
+
+
+	// searchBtn();
+	    // function searchBtn(){
+	    	var userInp = userInput.value;
+	    	var resultList=[];
+	    	// alert(userInp);
+	     	// var userSearchlist=userInp.split("");
+	     	// alert(userSearchlist);
+	     	
+	     	for(var i=0;i<keyList.length;i++){
+	     		var keyChar = keyList[i];
+	     		var keyListIndex = keyChar.indexOf(userInp)
+	     		// alert(keyListIndex);
+	     		if(keyListIndex!=-1){
+	     			// alert(valueList[i]);
+	     			// document.write("<tr>");
+	     			// document.write("<td>");
+	     			// 	document.write(valueList[i]);
+	     			// document.write("</td>")
+	     			// document.write("</tr>");
+	     			resultList.push(valueList[i]);
+	     			// tableResult.innerHTML=valueList[i];
+	     			alert(valueList[i]);
+	     		}
+	     	}
+	     	
+	     	// alert(resultList);
+	     	// for(var i=0;i<resultList.length;i++){
+
+	     	// }
+	     	// document.write("<table>")
+	     	// for(var i=0;i<resultList.length;i++){
+	     	// 	document.write("<tr>");
+	     	// 	document.write("<td>"+resultList[i]+"</td>");
+	     	// 	document.write("</tr>");
+	     	// }
+	     	// document.write("</table>")
+	     }
+     // }
+
+     // 查找功能
+   
+ 
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			border:1px solid red;
+			text-align: center;
+		}
+		td{
+			border:1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="user">
+	<button id="btn">查找</button>
+	<table id="table"></table>
+</body>
+<script>
+	var userInp = document.getElementById("user");
+	var tabelInp = document.getElementById("table");
+	var btn = document.getElementById("btn");
+
+
+
+
+	var str =  "https://www.baidu.com/s?wd=%E4%BD%A0%E5%A5%BD&rsv_spt=1&rsv_iqid=0x98582b4f000214f6&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=48021271_11_hao_pg&rsv_enter=1&rsv_sug3=7&rsv_sug2=0&inputT=944&rsv_sug4=2115";
+	var str1 = str.split("?");
+	// alert(str1);
+	var str2 = str1[1].split("&");
+
+
+	btn.onclick =userInp.oninput= function(){
+		var html="";
+		var userInput =userInp.value;
+
+		for(var i=0;i<str2.length;i++){
+			var str3 = str2[i].split("=");
+			var key = str3[0];
+			var value = str3[1];
+			if(key.indexOf(userInput)!=-1||value.indexOf(userInput)!=-1){
+				// html+=`<tr>//这是第二种方式，波浪号可以连接长字符串，包括换行等操作，注意添加内容的方式为：${}
+				// 		<td>${key}</td>
+				// 		<td>${value}</td>
+				// 	</tr>`
+				html+="<tr><td>"+key+"</td><td>"+value+"</td></tr>"//两种方法向事件中添加内容（一般用innerHTML的方法），而这样只能添加字符串，所以，需要将这些tr，td等等用双引号和加号连接成字符串的形式添加
+			}
+		}
+		tabelInp.innerHTML=html;
+	}
+
+	userInp.oninput();//在点击button前就加载在页面上
+
+
+</script>
+</html>
+
+

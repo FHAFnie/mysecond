@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机输出一个数，判断是否在数组中</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var list=[];
+	for(i=0;i<20;i++){
+		var con = parseInt(Math.random()*100);
+		list[list.length]=con;
+	}
+	document.write(list+"<br/>");
+	var con1 = parseInt(Math.random()*100);
+	var flag = true;
+	for(i=0;i<list.length;i++){
+		if(con1 == list[i]){
+			flag = false;
+			break;
+		}
+	}
+	if(flag){
+		document.write(con1+"不在数组中")
+	}else{
+		document.write(con1+"在数组中")
+	}
+</script>
+</html>

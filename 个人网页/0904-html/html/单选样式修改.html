@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单选样式修改</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		input{display: none;}
+		/*此处将label转化成行内块级元素后，可以设置它的样式*/
+		label{width: 20px;height: 20px;background-color: #eee;border-radius: 5px;display:inline-block;}
+		/*此处，将label与input关联起来*/
+		input:checked + label{background-color: yellow;}
+
+	</style>
+</head>
+<body>
+	<!-- 后面的input中name值必须一样才能实现单选的功能 -->
+	<input type="radio" id="a" name="s">
+	<label for="a"></label>1
+<!-- id值和for的值一样才能形成关联 -->
+	<input type="radio" id="b" name="s">
+	<label for="b"></label>2
+	<input type="radio" id="c" name="s">
+	<label for="c"></label>3
+	<input type="radio" id="d" name="s">
+	<label for="d"></label>4
+	<input type="radio" id="e" name="s">
+	<label for="e"></label>5
+</body>
+</html>

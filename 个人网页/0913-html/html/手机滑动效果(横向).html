@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机内容横向滑动</title>
+	<style type="text/css">
+	/*方法一，此处高度自适应*/
+		.box1{width: 500px;
+			border:3px solid red;
+			border-radius: 5px;
+			text-align: center;
+			overflow-x:scroll;
+			margin: 100px;
+			/*white-space:nowrap;text-overflow:ellipsis;这一段实际上也是为了实现图片不换，结果发现，并不能实现，因此才在外面套了一个大盒子给足够的宽度来放下所有图片*/}
+			/*此处在box上设置了宽高，然后再使用浮动的时候，图片会由于宽度不够而掉下去，为此，在图片的外层另外套了一层盒子，使得它的宽度足以放下所有图片，而不会超出发生掉下去的情况，很显然此时小盒子div会超出box的宽度，而显示出来，再加上overflow-x：scroll；即可实现横向滚动条的效果*/
+		.box1>div{width: 1500px;}
+		img{float: left;margin: 0 10px;/*display: inline-block;*/}
+		/*此方法不太好，因为div必须要设置足够的宽度，才能实现*/
+
+		/*方法二，利用弹性盒子来实现,主要利用弹性盒子中，可以不换行显示的效果*/
+		/*缺点：如果里面的内容不是块状，使用弹性盒子会造成挤压，并不会超出*/
+	.box2{width: 500px;
+			border:3px solid red;
+			border-radius: 5px;
+			text-align: center;
+			margin: 100px;
+			
+			display: -webkit-flex;display: flex;
+			-webkit-flex-direction:row;flex-direction:row;
+			-webkit-justify-content:space-between;justify-content:space-between;
+			/*此处不换行是关键*/
+			-webkit-flex-wrap:nowrap;
+			overflow-x:scroll;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="cl">
+			<img src="../images/1.jpg" alt="">
+			<img src="../images/2.jpg" alt="">
+			<img src="../images/3.jpg" alt="">
+			<img src="../images/4.jpg" alt="">
+			<img src="../images/1.jpg" alt="">
+			<img src="../images/4.jpg" alt="">
+		</div>
+	</div>
+
+
+	<div class="box2">
+		<img src="../images/1.jpg" alt="">
+		<img src="../images/2.jpg" alt="">
+		<img src="../images/3.jpg" alt="">
+		<img src="../images/4.jpg" alt="">
+		<img src="../images/1.jpg" alt="">
+		<img src="../images/4.jpg" alt="">
+	</div>
+</body>
+</html>

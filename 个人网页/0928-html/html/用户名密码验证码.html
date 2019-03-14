@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../js/common.js"></script>
+</head>
+<body>
+	用户名：<input type="text" id="username"><span id="username_span"></span><br/>
+	密码：<input type="text" id="userpwd"><br/>
+	确认：<input type="text" id="userpwd2"><span id="userpwd_span"></span><br/>
+
+	验证码：<input type="text" id="userCode"><span id="showUserCode">1324</span><span id="userCode_span"></span><br/>
+	
+	<button id="btn">注册</button>
+
+
+</body>
+
+
+
+<script>
+	// isLowerCode(str);// 判断是否小写
+	// isUpperCode(str)// 判断是否大写
+	// isNumber(str)//判断是否为数字
+	// 
+	// 
+
+
+	var usernameInp = document.getElementById("username");
+	var usernameSpan = document.getElementById("username_span");//用户名专用
+
+	var userpwdInp1 = document.getElementById("userpwd");//密码专用
+	var userpwdInp2 = document.getElementById("userpwd2");
+	var userpwdSpan =document.getElementById("userpwd_span");
+
+	var userCodeInp = document.getElementById("userCode");//用户输入的验证码
+
+	var showUserCode = document.getElementById("showUserCode");//显示的验证码（由show(list,len)函数生成）
+
+	var userCodeSpan =document.getElementById("userCode_span");
+
+	// var showUserCode = showUserCode.innerHTML;
+
+
+	showUserCode.innerHTML = show(big,4);//页面加载时就会显示验证码，将生成的验证码内容输入到span标签的内容中
+
+	showUserCode.onclick=function(){//用户点击验证码的时候，可以进行切换
+		showUserCode.innerHTML = show(big,4);
+	}
+
+
+
+
+	var btn = document.getElementById("btn");
+
+	btn.onclick=function(){
+
+
+		// 为什么都要再函数里面取值----------------------------------------------------------
+		// var username = usernameInp.value;
+		// var userpwd1 = userpwdInp1.value;
+		// var userpwd2 = userpwdInp2.value;
+
+		// var userCode = userCodeInp.value;-----------------------------------------------------------
+		// alert(userCode);
+		// var showUserCode = showUserCode.innerHTML;
+		
+		// checkCode();
+		
+		var flag1 = checkUsername();
+		var flag2 = checkUserpwd();
+		var flag3 = checkCode();
+		if(flag1&&flag2&&flag3){//只是为了有一个更好的展示效果，所以才在后面这样显示
+			alert("注册成功");
+		}else{
+			alert("注册失败，请看红色提示");
+		}
+
+
+		
+	}
+
+
+
+	function checkUsername(){//判断长度是否合法
+			var username = usernameInp.value;
+			if(username.length>=6&&username.length<=12){
+				var char = username.charAt(0);
+				if(!isNumber(char)){
+					var flag = true;
+					for(var i=0;i<username.length;i++){
+						var item=username.charAt(i);
+						// alert(big.indexOf(item));
+						if(big.indexOf(item)==-1){
+							flag = false;
+							break;
+						}
+					}
+					if(flag){
+						usernameSpan.innerHTML = "用户名合法";
+						usernameSpan.style.color = "green";
+						return true;
+					}else{
+						usernameSpan.innerHTML = "用户名含有非法字符";
+						usernameSpan.style.color = "red";
+						return false;
+					}
+
+				}else{
+					usernameSpan.innerHTML = "不能用数字开头";
+					usernameSpan.style.color = "red";
+					return false;
+				}
+
+
+
+			}else{
+				usernameSpan.innerHTML = "用户名长度不合法";
+				usernameSpan.style.color = "red";
+				return false;
+			}
+			var username = usernameInp.value;
+		}
+
+
+		function checkUserpwd(){//判断用户密码是否合法
+			var userpwd1 = userpwdInp1.value;
+			var userpwd2 = userpwdInp2.value;
+
+			if(userpwd1==userpwd2){//密码一致了，再判断是否含有非法字符
+				var flag = true;
+				for(var i=0;i<userpwd1.length;i++){
+					var item = userpwd1.charAt(i);
+					if(big.indexOf(item)==-1){//没有非法字符
+						flag= false;
+						break;
+					}
+				}
+				// 此处不好直接在for循环中，再进行判断后续，容易出错，所以在上传for循环中，将结果保留到flag中，然后根据flag的值再进行下一步的判断--------------------------------重点
+				
+				if(flag){//没有非法字符
+							var bigCodeCount = 0;//通过计数的方法，将字符串中的所有数据类型做一个统计，然后根据数据类型的数量来判断密码的复杂程度---------------------------------常见
+							var lowerCodeCount = 0;
+							var numCount = 0;
+						for(var i= 0;i<userpwd1.length;i++){
+							var item= userpwd1.charAt(i);
+							if(isUpperCode(item)){
+								// alert(isUpperCode(item));
+								bigCodeCount = 1;
+							}
+							if(isLowerCode(item)){
+								lowerCodeCount=1;
+								// alert(isLowerCode(item));
+							}
+							if(isNumber(item)){
+								numCount = 1;
+								// alert(isNumber(item));
+							}
+						}
+						// alert(bigCodeCount+lowerCodeCount+numCount);
+						switch(bigCodeCount+lowerCodeCount+numCount){
+							case 1: 
+								userpwdSpan.innerHTML= "弱";
+								userpwdSpan.style.color="green";
+								break;
+							case 2:
+								userpwdSpan.innerHTML= "中";
+								userpwdSpan.style.color="green";
+								break;
+							case 3:
+								userpwdSpan.innerHTML= "强";
+								userpwdSpan.style.color="green";
+								break;
+						}
+						return true;
+
+				}else{
+					userpwdSpan.innerHTML= "含有非法字符";
+					userpwdSpan.style.color="red";
+					return false;
+				}
+
+
+			}else{
+				userpwdSpan.innerHTML= "两次输入的密码不一致";
+				userpwdSpan.style.color="red";
+				return false;
+
+			}
+		}
+
+
+		function checkCode(){//判断验证码是否合法
+			// 为啥要在里面取值----------------------------------------------------------------------
+			var compareCode = showUserCode.innerHTML;//取出验证码框中的内容，需要另外取名字（compareCode）
+			var userCode = userCodeInp.value;//取出用户输入的验证码
+
+			//此处验证取出的内容要放在另外一个变量中，不然，会出现未知错误，
+			// alert(compareCode);
+			// alert(userCode);
+			// alert(toLowerCode(userCode)==toLowerCode(compareCode));
+			if(toLowerCode(userCode)==toLowerCode(compareCode)){
+				userCodeSpan.innerHTML = "验证码正确";
+				userCodeSpan.style.color = "green";
+				return true;
+			}else{
+				userCodeSpan.innerHTML = "验证码错误";
+				userCodeSpan.style.color = "red";
+				showUserCode.innerHTML = show(big,4);
+				return false;
+			}
+		}
+
+
+
+		// function show(list,len){
+		// 	var nesStr="";
+
+		// 	for(var i=0;i<len;i++){
+		// 		var randIndex = Math.round(Math.random()*(list.length-1));
+		// 		newStr+=list[randIndex];
+		// 	}
+		// 	return newStr;
+		// }
+
+</script>
+</html>

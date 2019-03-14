@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //输出100到200的非素数 并且告诉我最少能被谁整除
+
+    for (var j = 100; j <= 200; j++) {
+        var num = j;
+        var flag = true;//默认是素数
+        for (var i = 2; i < num; i++) {
+            if (num % i == 0) {
+                flag = false; //找到一个能被整除就是非素数
+                break;
+            }
+        }
+        if (!flag) { // flag == false
+            document.write(num + "至少可以被" + i + "整除<br/>");
+        }
+    }
+
+
+</script>
+</html>

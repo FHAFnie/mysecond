@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="test1" style="height: 100px;width: 100px;background:pink;position:absolute;top:0;left:0;border-radius: 50%;"></div>
+<div id="test2" style="height: 200px;width: 200px;background:orange;position:absolute;top:150px;left:150px;border-radius: 50%;"></div>
+<script>
+    function getCSS(obj,style){
+        if(window.getComputedStyle){
+            return getComputedStyle(obj)[style];
+        }
+        return obj.currentStyle[style];
+    }
+    function bump(obj,objOther,bgColor){
+
+        /***被碰元素***/
+        var r1 = obj.offsetWidth/2;
+        var x1 = parseFloat(getCSS(obj,'left')) + r1;
+        var y1 = parseFloat(getCSS(obj,'top')) + r1;
+        /**侵入元素**/
+        var r2 = objOther.offsetWidth/2;
+        var x2 = parseFloat(getCSS(objOther,'left')) + r2;
+        var y2 = parseFloat(getCSS(objOther,'top')) + r2;
+        //碰撞检测
+        var len = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+
+        if(len <= r1 + r2){
+            obj.style.backgroundColor = 'red';
+        }else{
+            obj.style.backgroundColor = bgColor;
+        }
+    }
+
+
+    function drag(obj){
+        obj.onmousedown = function(e){
+            e = e || event;
+            //提升当前元素的层级
+            obj.style.zIndex = '1';
+            //获取元素距离定位父级的x轴及y轴距离
+            var x0 = this.offsetLeft;
+            var y0 = this.offsetTop;
+            //获取此时鼠标距离视口左上角的x轴及y轴距离
+            var x1 = e.clientX;
+            var y1 = e.clientY;
+            //鼠标按下时，获得此时的页面区域
+            var L0 = 0;
+            var R0 = document.documentElement.clientWidth;
+            var T0 = 0;
+            var B0 = document.documentElement.clientHeight;
+            //鼠标按下时，获得此时的元素宽高
+            var EH = obj.offsetHeight;
+            var EW = obj.offsetWidth;
+            document.onmousemove = function(e){
+                e = e || event;
+                //获取此时鼠标距离视口左上角的x轴及y轴距离
+                x2 = e.clientX;
+                y2 = e.clientY;
+                //计算此时元素应该距离视口左上角的x轴及y轴距离
+                var X = x0 + (x2 - x1);
+                var Y = y0 + (y2 - y1);
+                /******范围限定*******/
+                //获取鼠标移动时元素四边的瞬时值
+                var L = X;
+                var R = X + EW;
+                var T = Y;
+                var B = Y + EH;
+                //在将X和Y赋值给left和top之前，进行范围限定
+                //只有在范围内时，才进行相应的移动
+                //如果脱离左侧范围，则left置L0
+                if(L < L0){X = L0;}
+                //如果脱离右侧范围，则left置为R0
+                if(R > R0){X = R0 - EW;}
+                //如果脱离上侧范围，则top置T0
+                if(T < T0){Y = T0;}
+                //如果脱离下侧范围，则top置为B0
+                if(B > B0){Y = B0 - EH;}
+                obj.style.left = X + 'px';
+                obj.style.top = Y + 'px';
+                //运行碰撞检测函数
+                bump(test2,test1,'orange')
+            }
+            document.onmouseup = function(e){
+                //降低当前元素的层级
+                obj.style.zIndex = '0';
+                //当鼠标抬起时，拖拽结束，则将onmousemove赋值为null即可
+                document.onmousemove = null;
+                //释放全局捕获
+                if(obj.releaseCapture){
+                    obj.releaseCapture();
+                }
+            }
+            //阻止默认行为
+            return false;
+            //IE8-浏览器阻止默认行为
+            if(obj.setCapture){
+                obj.setCapture();
+            }
+        }
+    }
+    drag(test1);
+    drag(test2);
+</script>
+</body>
+</html>
